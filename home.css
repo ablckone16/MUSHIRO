@@ -1,0 +1,285 @@
+@import url('./css/root.css');
+
+/* --------------- 上方輪播圖 --------------- */
+.carousel-container{
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.carousel{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    width: max-content;
+    animation: slideLeft 40s linear infinite;
+
+    will-change: transform;
+
+    /* border: 1px solid brown; */
+}
+
+.carousel img{
+    display: block;
+}
+
+@keyframes slideLeft {
+    from{
+        transform: translate(0);
+    }to{
+        transform: translate(-2738px);
+    }
+}
+
+/* --------------- 動態標題 --------------- */
+.animation-title{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    width: max-content;
+    margin-top: var(--section-margin-m);
+    /* margin-bottom: var(--section-margin-m); */
+}
+
+.animation-title p{
+    display: inline-block;
+
+    font-size: var(--animation-title);
+    font-weight: var(--bold);
+
+    color: var(--main-color-nightGreen);
+}
+
+/* --------------- 歡迎 圖文區塊 --------------- */
+.welcome-section{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 80px;
+
+    /* border: 1px solid blue; */
+}
+
+.welcome-section img{
+    display: block;
+
+    /* border: 1px solid brown; */
+}
+
+/* ---------- 右側容器 文字與超連結 ---------- */
+.text-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.text-block p{
+    writing-mode: vertical-rl;
+
+    font-size: var(--animation-title);
+    font-weight: var(--semiBold);
+    letter-spacing: 8px;
+}
+
+/* ----- 下方超連結容器 ----- */
+.view-link{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+    height: 40px;
+    gap: 4px;
+
+    margin-right: 80px;
+
+    position: relative;
+
+    transition: gap 0.4s cubic-bezier(0.25, 1, 0.5, 1);;
+
+    /* border: 1px solid brown; */
+}
+
+.view-link:hover{
+    gap: 16px;
+}
+
+.view-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--main-color-nightGreen);
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.view-link:hover::after{
+    width: 100%;
+}
+
+.view-link a{
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+/* --------------- 蟲簡介內容區塊 --------------- */
+.intro-area{
+    display: flex;
+    flex-direction: column;
+
+    width: max-content;
+    margin: 160px auto 0;
+
+    /* border: 1px solid brown; */
+}
+
+/* ---------- INTRO字樣 ---------- */
+.intro-area .intro{
+    display: inline-block;
+
+    /* margin: 120px 0 80px 0px; */
+
+    font-size: var(--section-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+/* ---------- 卡片區 ---------- */
+.card-container{
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+
+    margin-top: 64px;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+}
+
+.card img{
+    display: inline-block;
+    border-radius: var(--border-radius-card);
+}
+
+.card .card-text{
+    width: 400px;
+    margin-left: 40px;
+}
+
+.card .card-text h3{
+    margin-bottom: 16px;
+
+    font-size: 2rem;
+    font-weight: var(--semiBold);
+}
+
+.card .card-text p{
+    font-size: var(--card-text);
+    line-height: var(--card-text-p-lineHeight);
+}
+
+/* --------------- 文章區塊 --------------- */
+.article-area{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 1/1;
+    margin: 0 auto 120px;
+    margin-top: var(--section-margin-l);
+
+    background-image: url("./images/article_bgi.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.article-area p{
+    display: block;
+
+    margin: 40px 0 0 auto;
+
+    font-size: var(--section-title);
+    font-weight: var(--semiBold);
+    color: #fff;
+}
+
+.article-text{
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+    padding: 20px;
+    margin: auto 20px 0 auto;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.article-text h3{
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+    line-height: var(--card-text-title-lineHeight);
+    color: #fff;
+}
+
+.article-text p{
+    margin-top: 24px;
+
+    font-size: var(--card-text);
+    font-weight: var(--regular);
+    line-height: var(--card-text-p-lineHeight);
+}
+
+.article-area .view-link{
+    margin: 64px auto 80px;
+}
+
+.article-area .view-link a{
+    color: #fff;
+}
+
+.article-area .view-link svg{
+    color: #fff;
+}
+
+.article-area .view-link::after{
+    background: #fff;
+}
+
+/* --------------- Keep & Feed --------------- */
+.KF-content{
+    display: flex;
+    align-items: center;
+
+    width: 80%;
+    margin: 40px auto 80px;
+}
+
+.KF-content .text-container{
+    margin-left: 40px;
+}
+
+.KF-content .text-container>div{
+    margin-bottom: 80px;
+}
+
+.KF-content .text-container h3{
+    margin-bottom: 8px;
+
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+    line-height: var(--card-text-title-lineHeight);
+}
+
+.KF-content .text-container p{
+    font-size: var(--card-text);
+    font-weight: var(--regular);
+    line-height: var(--card-text-p-lineHeight);
+}

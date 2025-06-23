@@ -1,0 +1,65 @@
+@import url('reset.css');
+@import url('container-style.css');
+@import url('text-style.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root{
+    /* ---------- 顏色 ---------- */
+    --main-color-bg: #e9e9e9;
+    --main-color-dark: #222222;
+    --main-color-nightGreen: #253237;
+    /* --- 標籤 --- */
+    --label-yellow: #ba9132;
+    --label-green: #516e41;
+    --label-blue: #255359;
+
+    /* ---------- 文字 ---------- */
+
+    /* --- 字級 --- */
+    --section-title: 6rem;
+    --animation-title: 4rem;
+    --article-title: 2rem;
+    --article-title-40px: 2.5rem;
+
+    --subtitle-40px: 2.5rem;
+
+    --card-title: 1.25rem;
+    --list-title: 1.25rem;
+    --card-text: 1.25rem;
+    --section-text: 1.25rem;
+    --card-p: 1rem;
+    --nav-text: 1rem;
+    --lable-text: 1rem;
+
+    --h3: 1.5rem;
+
+    /* --- 字重 --- */
+    --regular: 400;
+    --medium: 500;
+    --semiBold: 600;
+    --bold: 700;
+
+    /* --- 行距 --- */
+    --card-text-title-lineHeight:120%;
+    --card-text-p-lineHeight: 150%;
+    --article-p-lineHeight: 200%;
+
+    /* ---------- 間距 ---------- */
+    --section-margin-l: 160px;
+    --section-margin-m: 80px;
+
+    /* ---------- 圓角 ---------- */
+    --border-radius-card: 32px;
+    --border-radius-listImg: 12px;
+    --border-radius-s: 4px;
+
+}
+
+p{
+    color: #222222;
+}
+
+strong {
+    font-weight: bold;
+  }

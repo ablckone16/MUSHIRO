@@ -1,0 +1,233 @@
+@import url('./css/root.css');
+body{
+    background-color: #fff;
+}
+
+/* --------------- 上方文字區塊 --------------- */
+.top-text-block{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.top-text-block p{
+    line-height: var(--card-text-p-lineHeight);
+}
+
+.top-text-block > p:first-of-type{
+    text-align: center;
+
+    font-size: var(--animation-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+/* --------------- Q&A選單 --------------- */
+
+/* ---------- ul ---------- */
+.faq{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 100%;
+    padding: 80px;
+    margin: 40px auto 80px;
+    box-sizing: border-box;
+
+    background-color: var(--main-color-bg);
+
+    /* border: 2px solid brown; */
+}
+
+/* ----- li ----- */
+.faq-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 800px;
+    padding: 24px 20px 24px 32px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+    border-radius: var(--border-radius-s);
+    background-color: #fff;
+
+    /* border: 1px solid blue; */
+}
+
+.faq-item:hover .faq-answer{
+    margin-top: 12px;
+    height: auto;
+    
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.faq-item:hover #faq-toggle-btn{
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+
+    transition: transform 0.3s ease;
+}
+
+/* 內部內容與排版 */
+.faq-question{
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.faq-question h3{
+    font-size: var(--list-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+#faq-toggle-btn{
+    all: unset; /* 清除預設樣式 */
+    cursor: pointer;
+
+    width: 40px;
+    aspect-ratio: 1/1;
+    margin-left: auto;
+    position: relative;
+
+    /* border: 1px solid brown; */
+}
+
+#faq-toggle-btn svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* border: 1px solid blue; */
+}
+
+/* 展開回答 */
+.faq-answer{
+    width: 100%;
+    height: 0;
+
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform 0.3s ease, height 0.3s ease;
+}
+
+.faq-answer p{
+    line-height: var(--card-text-p-lineHeight);
+}
+
+/* --------------- 留言牆 --------------- */
+input,textarea,select,button {
+    all: unset;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.contact-form .form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.form-group label{
+    text-align: center;
+
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+    /* border: 1px solid brown; */
+}
+
+.form-group textarea,input{
+    padding: 20px;
+    border: 1px solid #253237;
+    border-radius: var(--border-radius-s);
+}
+
+/* --------------- 提交按鈕 --------------- */
+.submit-btn{
+    padding: 16px 40px;
+    margin: 0 auto;
+
+    background-color: var(--main-color-nightGreen);
+    border-radius: var(--border-radius-s);
+
+    font-size: var(--card-title);
+    font-weight: var(--semiBold);
+    color: #fff;
+
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover{
+    transform: scale(1.05);
+}
+
+/* 按鈕hover特效 */
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    width: 200%;
+    height: 200%;
+  
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    );
+  
+    transform: translateX(-100%) rotate(25deg);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  /* Hover 時觸發動畫 */
+  .submit-btn:hover::before {
+    animation: shine-soft 1.2s ease forwards;
+  }
+  
+  /* 掃描動畫 */
+  @keyframes shine-soft {
+    0% {
+      transform: translateX(-100%) rotate(25deg);
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateX(100%) rotate(25deg);
+      opacity: 0;
+    }
+  }  

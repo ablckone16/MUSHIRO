@@ -1,0 +1,27 @@
+/* ------ 試做特效用 ------ */
+.flip-link {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    height: 1em;
+    line-height: 1em;
+    color: #222;
+  }
+  
+  .flip-link::after {
+    content: "Hello";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    color: #222;
+    transition: top 0.4s ease;
+  }
+  
+  .flip-link:hover::after {
+    top: 0;
+  }
+  
+  .flip-link:hover {
+    color: transparent; 
+  }

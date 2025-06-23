@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSHIRO - 主題專欄</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="article.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- --------------- 導覽列 --------------- -->
+        <header>
+            <div class="logo"><a href="index.html">MUSHIRO</a></div>
+            <ul>
+                <li><a href="./book.html">蟲圖鑑</a></li>
+                <li><a href="./article.html">主題專欄</a></li>
+                <li><a href="./keep&feed.html">飼養Q&A</a></li>
+                <li><a href="./shop.html">購買資訊</a></li>
+            </ul>
+        </header>
+        <!-- --------------- 麵包屑 --------------- -->
+        <div id="breadcrumb"><p><span style="opacity: 0.4;">首頁 > </span><span style="font-size: 1.25rem; font-weight: var(--semiBold);">主題專欄</span></p></div>
+        <!-- --------------- 大標題 --------------- -->
+        <div class="bigTitle-container">
+            <p class="big-title">ARTICLE</p>
+            <p class="big-title vertical">ARTICLE</p>
+        </div>
+    </div>
+        <!-- --------------- 精選文章 --------------- -->
+    <div class="wrapper-fullscreen">
+        <div class="selected-article">
+            <div class="title-container">
+                <p>精選文章</p>
+            </div>
+            <!-- ---------- 卡片容器 ---------- -->
+            <div class="card-container">
+                <div class="card">
+                    <a href="article-content.html">
+                        <img src="./images/article_card_img1.png" alt="">
+                        <div class="text-container">
+                            <h3>新手必讀：飼養長戟大兜蟲的五大重點</h3>
+                            <p>飼養長戟大兜蟲其實並不難，只要掌握幾個基本要點，就能讓牠們健康地成長與蛻變。本篇整理五大關鍵重點，從合適的飼育箱選擇、基礎溫濕度控管，到食材挑選與餵食頻率，逐一解析適合新手的實用方法。無論你是第一次飼養，還是過去曾經失敗，本篇都能提供清晰的入門指引，幫助你建立信心，打造良好的照護環境，陪伴你的甲蟲順利成長。
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="./images/article_card_img2.png" alt="">
+                        <div class="text-container">
+                            <h3>從耗材、溫度到濕度：打造理想的飼育箱</h3>
+                            <p>打造理想的飼育環境是飼養甲蟲成功與否的關鍵。從選擇適合的土壤基質開始，你需要了解不同材料的保水性與通氣性，進而決定是否添加腐植質或水苔。溫度的維持也同樣重要，過冷或過熱都會影響甲蟲的活動力與生長速度。濕度方面則需配合季節與物種需求進行微調。本篇將詳細說明如何調整環境條件，並提供簡易的監測與調整方法，讓你在家中也能建立專業等級的飼育箱。
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="./images/article_card_img3.png" alt="">
+                        <div class="text-container">
+                            <h3>幼蟲比成蟲還重要？從土裡開始的生命旅程</h3>
+                            <p>許多飼養者將焦點放在華麗的成蟲階段，卻忽略了幼蟲時期其實才是影響成長與壽命的關鍵。本篇將帶你深入了解甲蟲幼蟲在土壤中發育的過程，包括適合的基質選擇、通風濕度控制，以及分齡餵食與蛻皮觀察重點。唯有從地下的生命階段開始細心照料，才能培養出健康強壯的成蟲，為整個飼養旅程奠定穩固的基礎。
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#">
+                        <img src="./images/article_card_img4.png" alt="">
+                        <div class="text-container">
+                            <h3>從森林到展示櫃：甲蟲標本製作流程全解</h3>
+                            <p>想要製作一件精緻且保存良久的甲蟲標本嗎？這篇文章將完整介紹從採集、清潔、防腐處理，到展翅定位與定型風乾的每一個步驟。不論你是初次嘗試還是希望提升現有技術，都能從中獲得實用的技巧與細節提示。透過正確的處理方式，你將能留住甲蟲最壯麗的一刻，為自然留下最動人的紀錄與回憶。
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- ---------- 文章控制按鈕 ---------- -->
+            <div class="control-btn-block">
+                <div class="btn-container">
+                    <button class="btn" id="btn-prev" aria-label="上一個">
+                        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 17L2 9L10 1" stroke="#222222" stroke-width="2"/>
+                        </svg>  
+                    </button>
+                    <button class="btn" id="btn-next" aria-label="下一個">
+                        <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L9 9L1 17" stroke="#222222" stroke-width="2"/>
+                        </svg>                       
+                    </button>
+                </div>
+                <div class="line"></div>
+                <div class="article-count">
+                    <p>4</p>
+                    <p>article</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- --------------- 更多文章 --------------- -->
+        <div class="more_article">
+            <p class="subtitle">MORE ARTICLE</p>
+                <ul class="article-list">
+                    <li class="list-item">
+                <a class="item-content" href="#">
+                    <img src="./images/list-img/list-img1.png" alt="">
+                    <div class="drop-text">
+                        <h3>一隻甲蟲的秘密裝備清單</h3>
+                        <p>從帥氣的頭角到開蓋式的翅膀，每一個部位都有專屬功能。甲蟲的身體就是一整套裝備設計，帥氣又實用！</p>
+                    </div>
+                    <span class="label label-blue">蟲說雜談</span>
+                </a>
+                    </li>
+                    <li class="list-item">
+                <a class="item-content" href="#">
+                    <img src="./images/list-img/list-img2.png" alt="">
+                    <div class="drop-text">
+                        <h3>M屬-兜蟲界的橫綱戰士</h3>
+                        <p>象兜有著圓潤的體型與短角，被譽為昆蟲界的奇異果，外型可愛卻藏著強大的力量。</p>
+                    </div>
+                    <span class="label label-green">甲蟲檔案</span>
+                </a>
+                    </li>
+                    <li class="list-item">
+                <a class="item-content" href="#">
+                    <img src="./images/list-img/list-img3.png" alt="">
+                    <div class="drop-text">
+                        <h3>兩種生命型態，兩種照養邏輯：甲蟲飼養完全攻略</h3>
+                        <p>你知道嗎？甲蟲的一生分為「幼蟲期」與「成蟲期」，就像完全不同的兩種生物。幼蟲住在土裡、靠腐植質長大；成蟲則出來展現色彩與力量，吃甜食、飛翔、繁殖。掌握這兩個階段的需求差異，是成功養蟲的第一步！</p>
+                    </div>
+                    <span class="label label-yellow">飼養攻略</span>
+                </a>
+                    </li>
+                    <li class="list-item">
+                <a class="item-content" href="#">
+                    <img src="./images/list-img/list-img4.png" alt="">
+                    <div class="drop-text">
+                        <h3>昆蟲界寶石：黑金與黃金</h3>
+                        <p>有些甲蟲不只帥，還會閃閃發光。從黃金鬼鍬形蟲的黃金光澤，到非洲大黑艷的深邃烤漆，這些天然裝甲像寶石一樣閃耀，是自然界最硬核的收藏品。</p>
+                    </div>
+                    <span class="label label-green">甲蟲檔案</span>
+                </a>
+                    </li>
+                    <li class="list-item">
+                <a class="item-content" href="#">
+                    <img src="./images/list-img/list-img5.png" alt="">
+                    <div class="drop-text">
+                        <h3>不可思議的蛻變</h3>
+                        <p>在黑暗的土壤裡，幼蟲靜靜築起蛹室，彷彿進入沉睡。幾週後，一隻閃耀堅甲、長出大角的成蟲破土而出。這場變身，是自然界最神祕的魔法。</p>
+                    </div>
+                    <span class="label label-blue">蟲說雜談</span>
+                </a>
+                    </li>
+                </ul>
+            <div class="view-link">
+                <a href="./article-hub.html">觀看全部文章</a>
+            <!-- 向量箭頭 -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <polyline points="16 6 22 12 16 18" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- --------------- footer --------------- -->
+    <footer>
+            <div class="content-wrapper">
+                <div class="left-container">
+                <!-- 品牌介紹 -->
+                    <div class="brand-text">
+                    <p class="logo">MUSHIRO</p>
+                    <p>hello@mushiro.site</br>
+                        +886 02 6416 9077</p>
+                    </div>
+                    <p class="rights">© 2025 MUSHIRO 虫郎 All rights reserved.</p>
+            <!-- 關注我們 -->
+                    <div class="footer-icons">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.33325 16.0002C3.33325 10.0295 3.33325 7.04283 5.18792 5.18816C7.04259 3.3335 10.0279 3.3335 15.9999 3.3335C21.9706 3.3335 24.9572 3.3335 26.8119 5.18816C28.6666 7.04283 28.6666 10.0282 28.6666 16.0002C28.6666 21.9708 28.6666 24.9575 26.8119 26.8122C24.9572 28.6668 21.9719 28.6668 15.9999 28.6668C10.0293 28.6668 7.04259 28.6668 5.18792 26.8122C3.33325 24.9575 3.33325 21.9722 3.33325 16.0002Z" stroke="#253237" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23.344 8.66699H23.3307M22 16.0003C22 17.5916 21.3679 19.1177 20.2426 20.243C19.1174 21.3682 17.5913 22.0003 16 22.0003C14.4087 22.0003 12.8826 21.3682 11.7574 20.243C10.6321 19.1177 10 17.5916 10 16.0003C10 14.409 10.6321 12.8829 11.7574 11.7577C12.8826 10.6325 14.4087 10.0003 16 10.0003C17.5913 10.0003 19.1174 10.6325 20.2426 11.7577C21.3679 12.8829 22 14.409 22 16.0003Z" stroke="#253237" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30.0533 8.56016C29.8867 7.93654 29.5596 7.36745 29.1046 6.90963C28.6496 6.4518 28.0825 6.12122 27.4599 5.95083C25.1732 5.3335 15.9999 5.3335 15.9999 5.3335C15.9999 5.3335 6.82658 5.3335 4.53992 5.95083C3.91733 6.12122 3.35027 6.4518 2.89525 6.90963C2.44023 7.36745 2.11314 7.93654 1.94659 8.56016C1.33325 10.8642 1.33325 15.6668 1.33325 15.6668C1.33325 15.6668 1.33325 20.4695 1.94659 22.7735C2.11294 23.3974 2.43993 23.9667 2.89497 24.4248C3.35 24.8829 3.91717 25.2137 4.53992 25.3842C6.82792 26.0002 15.9999 26.0002 15.9999 26.0002C15.9999 26.0002 25.1732 26.0002 27.4599 25.3842C28.0827 25.2137 28.6498 24.8829 29.1049 24.4248C29.5599 23.9667 29.8869 23.3974 30.0533 22.7735C30.6666 20.4722 30.6666 15.6668 30.6666 15.6668C30.6666 15.6668 30.6666 10.8642 30.0533 8.56016ZM12.9999 20.0282V11.3068L20.6666 15.6682L12.9999 20.0282Z" stroke="#253237" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round"/>
+                        </svg>                    
+                    </div>
+                </div>
+                <!-- 底部導覽列 -->
+                <div class="bottom-nav">
+                    <a href="./book.html">蟲圖鑑</a>
+                    <a href="./article.html">主題專欄</a>
+                    <a href="./keep&feed.html">飼養Q&A</a>
+                    <a href="./shop.html">購買資訊</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

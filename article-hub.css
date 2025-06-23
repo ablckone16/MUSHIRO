@@ -1,0 +1,126 @@
+@import url(./css/root.css);
+
+/* --------------- 更多文章 --------------- */
+.article_container{
+    width: 100%;
+
+    margin: 160px auto 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* border: 1px solid brown; */
+}
+
+/* ul */
+.article-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 40px auto 64px;
+
+    width: 100%;
+    max-width: 760px;
+
+    /* border: 1px solid brown; */
+}
+
+/* li */
+.list-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 8px;
+
+    background-color: #fff;
+    border-radius: var(--border-radius-s);
+    box-sizing: border-box;
+
+    transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.list-item:hover{
+    transform: scale(1.05);
+    padding: 16px 8px 16px 16px;
+}
+
+.list-item:hover .drop-text p{
+    height: auto;
+    margin-top: 8px;
+
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* ------ 表單外觀 ------ */
+.item-content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    /* border: 1px solid brown; */
+}
+
+.item-content img{
+    width: 64px;
+    aspect-ratio: 1/1;
+    margin-right: 24px;
+
+    border-radius: var(--border-radius-s);
+}
+
+.drop-text{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+
+    /* border: 1px solid brown; */
+}
+
+.drop-text h3{
+    font-size: var(--list-title);
+    font-weight: var(--semiBold);
+}
+
+.drop-text p{
+    line-height: var(--card-text-p-lineHeight);
+
+    height: 0;
+    margin-top: 0;
+
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform 0.3s ease, height 0.3s ease, margin 0.3s ease;
+}
+
+.label{
+    display: inline-block;
+    white-space: nowrap;/* 不換行 */
+    width: fit-content;
+
+    padding: 8px;
+    margin-left: auto;
+    margin-right: 16px;
+
+    font-size: var(--label-text);
+    font-weight: var(--semiBold);
+    color: #fff;
+
+    border-radius: var(--border-radius-s);
+}
+
+.label-yellow{
+    background-color: var(--label-yellow);
+}
+
+.label-green{
+    background-color: var(--label-green);
+}
+
+.label-blue{
+    background-color: var(--label-blue);
+}

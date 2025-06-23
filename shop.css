@@ -1,0 +1,95 @@
+@import url(./css/root.css);
+
+.title {
+    margin-top: 80px;
+
+    font-size: var(--animation-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+
+    text-align: center;
+}
+
+/* ul */
+.shop-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px 28px;
+
+    width: 100%;
+    max-width: 880px;
+
+    margin: 64px auto 160px;
+}
+
+/* --------------- 卡片內容 --------------- */
+.shop-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+    width: 50%;
+    max-width: 400px;
+
+    background-color: #fff;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.shop-card img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.shop-card h3{
+    margin-top: 24px;
+    text-align: center;
+
+    font-size: 1.5rem;
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+/* 內層ul */
+.shop-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 0 32px;
+    margin: 16px 0 40px;
+}
+
+.shop-info li{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.shop-info p{
+    line-height: var(--card-text-p-lineHeight);
+}
+
+.shop-info li svg{
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.shop-card:hover{
+    animation: bounceTwice 0.6s ease;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounceTwice {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-6%); }
+    40%  { transform: translateY(0); }
+    60%  { transform: translateY(-3%); }
+    80%  { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}

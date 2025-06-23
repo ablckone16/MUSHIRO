@@ -1,0 +1,144 @@
+@import url('./css/root.css');
+/* --------------- 主圖鑑牆 --------------- */
+.book-main{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    margin-top: 80px;
+}
+
+.book-main-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    /* border: 1px solid blue; */
+}
+
+.child-5{
+    justify-content: space-evenly;
+}
+
+/* ---------- 甲蟲卡 ---------- */
+.beetle-card{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: fit-content;
+
+    /* border: 1px solid brown; */
+}
+
+.beetle-card img{
+    display: block;
+}
+
+.beetle-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    max-width: 0;
+    max-height: 300px; /* 限制高度防爆版 */
+    overflow: hidden;
+    opacity: 0;
+
+    transition: max-width 0.4s ease, opacity 0.4s ease;
+}
+
+  .beetle-info h3{
+    font-size: var(--card-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+  }
+  
+  .beetle-info p{
+    line-height: var(--card-text-p-lineHeight);
+  }
+
+  .beetle-card:hover .beetle-info {
+    max-width: 260px;
+    max-height: 300px; /* 限制高度防爆版 */
+    opacity: 1;
+  }
+
+/* --------------- CTA文字區塊 --------------- */
+.cta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+
+    width: 100%;
+    max-width: 600px;
+    margin: 120px auto;
+
+    /* border: 1px solid brown; */
+}
+
+.cta .text-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+
+.text-block h3{
+    text-align: center;
+
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen)
+}
+
+.text-block p{
+    font-size: var(--card-text);
+    line-height: var(--card-text-p-lineHeight);
+}
+
+/* ---------- 下方超連結容器 ---------- */
+.view-link{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+    height: 40px;
+    gap: 4px;
+
+    position: relative;
+
+    transition: gap 0.4s cubic-bezier(0.25, 1, 0.5, 1);;
+
+    /* border: 1px solid brown; */
+}
+
+.view-link:hover{
+    gap: 16px;
+}
+
+.view-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--main-color-nightGreen);
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.view-link:hover::after{
+    width: 100%;
+}
+
+.view-link a{
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}

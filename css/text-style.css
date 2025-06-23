@@ -1,0 +1,9 @@
+/* --------------- 文字樣式 --------------- */
+a{
+    text-decoration: none;
+    color: var(--main-color-dark);
+}
+
+h1,h2,h3,p{
+    color: var(--main-color-dark);
+}

@@ -1,0 +1,349 @@
+@import url('./css/root.css');
+
+.bigTitle-container{
+    margin-top: 80px;
+}
+
+.big-title{
+    font-size: var(--section-title);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+.vertical{
+    display: block;
+
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+
+/* --------------- 精選文章 --------------- */
+.selected-article{
+    width: 70%;
+    /* height: 1200px; */
+    margin-left: auto;
+    overflow: hidden;
+
+    /* border: 1px solid brown; */
+}
+
+/* 底線 */
+.title-container{
+    border-bottom: 1px solid var(--main-color-dark);
+}
+
+/* 標題 */
+.title-container p{
+    margin-bottom: 16px;
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+}
+
+/* ---------- 卡片容器 ---------- */
+.card-container{
+    display: flex;
+    gap: 40px;
+    width: max-content;
+    margin: 80px 0 40px;
+
+    align-items: stretch;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 400px;
+    max-width: 400px;
+    max-height: 500px;
+
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    background-color: hsl(0, 0%, 100%);
+
+    cursor: pointer;
+}
+
+.card:hover{
+    animation: bounceTwice 0.6s ease;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounceTwice {
+    0%   { transform: translateY(0); }
+    20%  { transform: translateY(-6%); }
+    40%  { transform: translateY(0); }
+    60%  { transform: translateY(-3%); }
+    80%  { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+/* ----- 卡片文字 ----- */
+.card .text-container{
+    margin: 24px 32px 32px;
+    overflow: hidden;
+
+    /* border: 1px solid brown; */
+}
+
+.card .text-container h3{
+    margin-bottom: 16px;
+
+    font-size: var(--card-title);
+    font-weight: var(--semiBold);
+    line-height: var(--card-text-title-lineHeight);
+}
+
+.card .text-container p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    font-size: var(--card-p);
+    font-weight: var(--meidum);
+    line-height: var(--card-text-p-lineHeight);
+}
+/* ---------- 文章控制按鈕容器 ---------- */
+.control-btn-block{
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.btn-container{
+    display: flex;
+    gap: 8px;
+}
+
+.btn-container .btn{
+    padding: 12px 40px;
+
+    background-color: transparent;
+    border: 1px solid var(--main-color-dark);
+    border-radius: var(--border-radius-s);
+
+    cursor: pointer;
+}
+
+#btn-prev{
+    opacity: 0.2;
+    cursor: default;
+}
+
+#btn-prev svg{
+    display: block;
+
+    transform: translateX(-10%);
+
+    /* border: 1px solid brown; */
+}
+
+#btn-next svg{
+    display: block;
+
+    transform: translateX(20%);
+}
+
+/* 線 */
+.line{
+    width: 30%;
+    height: 1px;
+
+    background-color: var(--main-color-dark);
+}
+
+/* 文字容器 */
+.article-count{
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+
+    /* border: 1px solid brown; */
+}
+
+.article-count > p:first-of-type{
+    font-size: var(--animation-title);
+    line-height: 0.9;
+}
+
+.article-count p{
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+
+    color: var(--main-color-nightGreen);
+}
+
+/* --------------- 更多文章 --------------- */
+.more_article{
+    width: 100%;
+
+    margin: 160px auto 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* border: 1px solid brown; */
+}
+
+.subtitle{
+    text-align: center;
+    font-size: var(--subtitle-40px);
+    font-weight: var(--semiBold);
+}
+
+/* ul */
+.article-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 40px auto 64px;
+
+    width: 100%;
+    max-width: 760px;
+
+    /* border: 1px solid brown; */
+}
+
+/* li */
+.list-item{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 8px;
+
+    background-color: #fff;
+    border-radius: var(--border-radius-s);
+    box-sizing: border-box;
+
+    transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.list-item:hover{
+    transform: scale(1.05);
+    padding: 16px 8px 16px 16px;
+}
+
+.list-item:hover .drop-text p{
+    height: auto;
+    margin-top: 8px;
+
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* ------ 表單外觀 ------ */
+.item-content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    /* border: 1px solid brown; */
+}
+
+.item-content img{
+    width: 64px;
+    aspect-ratio: 1/1;
+    margin-right: 24px;
+
+    border-radius: var(--border-radius-s);
+}
+
+.drop-text{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+
+    /* border: 1px solid brown; */
+}
+
+.drop-text h3{
+    font-size: var(--list-title);
+    font-weight: var(--semiBold);
+}
+
+.drop-text p{
+    line-height: var(--card-text-p-lineHeight);
+
+    height: 0;
+    margin-top: 0;
+
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform 0.3s ease, height 0.3s ease, margin 0.3s ease;
+}
+
+.label{
+    display: inline-block;
+    white-space: nowrap;/* 不換行 */
+    width: fit-content;
+
+    padding: 8px;
+    margin-left: auto;
+    margin-right: 16px;
+
+    font-size: var(--label-text);
+    font-weight: var(--semiBold);
+    color: #fff;
+
+    border-radius: var(--border-radius-s);
+}
+
+.label-yellow{
+    background-color: var(--label-yellow);
+}
+
+.label-green{
+    background-color: var(--label-green);
+}
+
+.label-blue{
+    background-color: var(--label-blue);
+}
+
+/* ----- 下方超連結容器 ----- */
+.view-link{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+    height: 40px;
+    gap: 4px;
+
+    position: relative;
+
+    transition: gap 0.4s cubic-bezier(0.25, 1, 0.5, 1);;
+
+    /* border: 1px solid brown; */
+}
+
+.view-link:hover{
+    gap: 16px;
+}
+
+.view-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--main-color-nightGreen);
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.view-link:hover::after{
+    width: 100%;
+}
+
+.view-link a{
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
