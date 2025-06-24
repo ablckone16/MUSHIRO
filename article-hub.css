@@ -1,10 +1,49 @@
 @import url(./css/root.css);
 
+/* --------------- 動態標題 --------------- */
+.title-container-leftslide{
+    display: flex;
+
+    margin-top: var(--section-margin-m);
+
+    /* border: 1px solid brown; */
+    overflow: hidden;
+}
+
+.animation-title-leftslide{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    /* border: 1px solid blue; */
+    animation: text-slideleft 30s linear infinite;
+}
+
+.animation-title-leftslide p{
+    display: block;
+    min-width: max-content;
+    margin-left: 80px;
+
+    font-family: 'Unbounded', sans-serif;
+    font-size: var(--animation-title);
+    font-weight: 600;
+    color: var(--main-color-nightGreen);
+}
+
+@keyframes text-slideleft {
+    from{
+        transform: translate(0%);
+    }to{
+        transform: translate(-100%);
+    }
+}
+
 /* --------------- 更多文章 --------------- */
 .article_container{
     width: 100%;
 
-    margin: 160px auto 120px;
+    margin: 40px auto 120px;
 
     display: flex;
     flex-direction: column;
@@ -18,7 +57,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin: 40px auto 64px;
+    margin: 40px auto;
 
     width: 100%;
     max-width: 760px;
@@ -123,4 +162,25 @@
 
 .label-blue{
     background-color: var(--label-blue);
+}
+
+/* 下方文字容器 */
+.article-count{
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+
+    /* border: 1px solid brown; */
+}
+
+.article-count > p:first-of-type{
+    font-size: var(--animation-title);
+    line-height: 0.9;
+}
+
+.article-count p{
+    font-size: var(--article-title);
+    font-weight: var(--semiBold);
+
+    color: var(--main-color-nightGreen);
 }

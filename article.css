@@ -5,8 +5,9 @@
 }
 
 .big-title{
+    font-family: 'Unbounded', sans-serif;
     font-size: var(--section-title);
-    font-weight: var(--semiBold);
+    font-weight: 600;
     color: var(--main-color-nightGreen);
 }
 
@@ -15,7 +16,16 @@
 
     transform: rotate(90deg);
     transform-origin: left top;
+
+    animation: swing-down 2s ease-in-out forwards;
 }
+
+@keyframes swing-down {
+    0%{ transform: rotate(0deg); }
+    45%{ transform: rotate(97deg); }
+    75%{ transform: rotate(83deg); }
+    100%{ transform: rotate(90deg); }
+  }
 
 /* --------------- 精選文章 --------------- */
 .selected-article{

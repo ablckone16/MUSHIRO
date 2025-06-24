@@ -2,7 +2,7 @@
 
 /* --------------- 上方輪播圖 --------------- */
 .carousel-container{
-    width: 100%;
+    display: flex;
 
     overflow: hidden;
 }
@@ -10,46 +10,66 @@
 .carousel{
     display: flex;
     align-items: center;
-    gap: 80px;
 
     width: max-content;
-    animation: slideLeft 40s linear infinite;
 
-    will-change: transform;
+    transform: translateX(0%);
+    animation: slideLeft 30s linear infinite;
 
     /* border: 1px solid brown; */
 }
 
 .carousel img{
     display: block;
+    margin-left: 80px;
 }
 
 @keyframes slideLeft {
     from{
-        transform: translate(0);
+        transform: translate(0%);
     }to{
-        transform: translate(-2738px);
+        transform: translate(-100%);
     }
 }
 
 /* --------------- 動態標題 --------------- */
+.title-container{
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: var(--section-margin-m);
+
+    /* border: 1px solid brown; */
+    overflow: hidden;
+}
+
 .animation-title{
     display: flex;
     align-items: center;
-    gap: 80px;
 
     width: max-content;
-    margin-top: var(--section-margin-m);
-    /* margin-bottom: var(--section-margin-m); */
+
+    /* border: 1px solid blue; */
+    animation: slideRight 30s linear infinite;
 }
 
 .animation-title p{
-    display: inline-block;
+    display: block;
+    min-width: max-content;
+    margin-left: 80px;
 
+    font-family: 'Unbounded', sans-serif;
     font-size: var(--animation-title);
-    font-weight: var(--bold);
-
+    font-weight: 600;
     color: var(--main-color-nightGreen);
+}
+
+@keyframes slideRight {
+    from{
+        transform: translate(0%);
+    }to{
+        transform: translate(100%);
+    }
 }
 
 /* --------------- 歡迎 圖文區塊 --------------- */
@@ -144,8 +164,9 @@
 
     /* margin: 120px 0 80px 0px; */
 
+    font-family: 'Unbounded', sans-serif;
     font-size: var(--section-title);
-    font-weight: var(--semiBold);
+    font-weight: 600;
     color: var(--main-color-nightGreen);
 }
 
@@ -199,6 +220,18 @@
     background-image: url("./images/article_bgi.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 0.3s ease;
+}
+
+.article-area:hover {
+    transform: scale(1.05);
+}
+
+.article-area p:first-child{
+    font-family: 'Unbounded', sans-serif;
+    transform: translate(5%);
 }
 
 .article-area p{
@@ -254,6 +287,46 @@
 }
 
 /* --------------- Keep & Feed --------------- */
+
+/* --------------- 動態標題 --------------- */
+.title-container-leftslide{
+    display: flex;
+
+    margin-top: var(--section-margin-m);
+
+    /* border: 1px solid brown; */
+    overflow: hidden;
+}
+
+.animation-title-leftslide{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    /* border: 1px solid blue; */
+    animation: text-slideleft 30s linear infinite;
+}
+
+.animation-title-leftslide p{
+    display: block;
+    min-width: max-content;
+    margin-left: 80px;
+
+    font-family: 'Unbounded', sans-serif;
+    font-size: var(--animation-title);
+    font-weight: 600;
+    color: var(--main-color-nightGreen);
+}
+
+@keyframes text-slideleft {
+    from{
+        transform: translate(0%);
+    }to{
+        transform: translate(-100%);
+    }
+}
+
 .KF-content{
     display: flex;
     align-items: center;

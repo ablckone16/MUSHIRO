@@ -1,4 +1,44 @@
 @import url('./css/root.css');
+
+/* --------------- 動態標題 --------------- */
+.title-container-leftslide{
+    display: flex;
+
+    margin-top: var(--section-margin-m);
+
+    /* border: 1px solid brown; */
+    overflow: hidden;
+}
+
+.animation-title-leftslide{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    /* border: 1px solid blue; */
+    animation: text-slideleft 30s linear infinite;
+}
+
+.animation-title-leftslide p{
+    display: block;
+    min-width: max-content;
+    margin-left: 80px;
+
+    font-family: 'Unbounded', sans-serif;
+    font-size: var(--animation-title);
+    font-weight: 600;
+    color: var(--main-color-nightGreen);
+}
+
+@keyframes text-slideleft {
+    from{
+        transform: translate(0%);
+    }to{
+        transform: translate(-100%);
+    }
+}
+
 /* --------------- 主圖鑑牆 --------------- */
 .book-main{
     display: flex;
@@ -36,6 +76,19 @@
 
 .beetle-card img{
     display: block;
+}
+
+.beetle-card:hover img {
+    animation: beetle-wiggle 0.6s ease-in-out;
+  }
+
+@keyframes beetle-wiggle {
+    0%   { transform: rotate(0deg) translateX(0); }
+    20%  { transform: rotate(2deg) translateX(1px); }
+    40%  { transform: rotate(-2deg) translateX(-1px); }
+    60%  { transform: rotate(2deg) translateX(1px); }
+    80%  { transform: rotate(-2deg) translateX(-1px); }
+    100% { transform: rotate(0deg) translateX(0); }
 }
 
 .beetle-info {
@@ -93,7 +146,7 @@
 
     font-size: var(--article-title);
     font-weight: var(--semiBold);
-    color: var(--main-color-nightGreen)
+    color: var(--main-color-dark)
 }
 
 .text-block p{

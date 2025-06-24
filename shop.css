@@ -1,13 +1,42 @@
 @import url(./css/root.css);
 
-.title {
-    margin-top: 80px;
+/* --------------- 動態標題 --------------- */
+.title-container-leftslide{
+    display: flex;
 
+    margin-top: var(--section-margin-m);
+
+    /* border: 1px solid brown; */
+    overflow: hidden;
+}
+
+.animation-title-leftslide{
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    /* border: 1px solid blue; */
+    animation: text-slideleft 30s linear infinite;
+}
+
+.animation-title-leftslide p{
+    display: block;
+    min-width: max-content;
+    margin-left: 80px;
+
+    font-family: 'Unbounded', sans-serif;
     font-size: var(--animation-title);
-    font-weight: var(--semiBold);
+    font-weight: 600;
     color: var(--main-color-nightGreen);
+}
 
-    text-align: center;
+@keyframes text-slideleft {
+    from{
+        transform: translate(0%);
+    }to{
+        transform: translate(-100%);
+    }
 }
 
 /* ul */
@@ -23,19 +52,29 @@
     margin: 64px auto 160px;
 }
 
+.g-map{
+    display: flex;
+    align-items: stretch;
+
+    width: 50%;
+    max-width: 400px;
+}
+
 /* --------------- 卡片內容 --------------- */
 .shop-card{
     display: flex;
     flex-direction: column;
     justify-content: start;
 
-    width: 50%;
-    max-width: 400px;
+    /* width: 50%;
+    max-width: 400px; */
 
     background-color: #fff;
     border-radius: var(--border-radius-card);
     overflow: hidden;
     box-sizing: border-box;
+
+    cursor: pointer;
 }
 
 .shop-card img{
