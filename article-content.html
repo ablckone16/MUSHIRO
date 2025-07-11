@@ -7,25 +7,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./article-content.css">
+    <link rel="stylesheet" href="./rwd/container_style_rwd.css">
+    <link rel="stylesheet" href="./rwd/article_content_rwd.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <!-- --------------- 導覽列 --------------- -->
         <header>
             <div class="logo"><a href="index.html">MUSHIRO</a></div>
-            <ul>
-                <li><a href="./book.html">蟲圖鑑</a></li>
-                <li><a href="./article.html">主題專欄</a></li>
-                <li><a href="./keep&feed.html">飼養Q&A</a></li>
-                <li><a href="./shop.html">購買資訊</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="./book.html">蟲圖鑑</a></li>
+                    <li><a href="./article.html">主題專欄</a></li>
+                    <li><a href="./keep&feed.html">飼養Q&A</a></li>
+                    <li><a href="./shop.html">購買資訊</a></li>
+                </ul>
+            </nav>
+            <div class="header_toggleMenu">
+                <button type="button" class="burger" id="burger" aria-label="開啟導覽選單">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </header>
-        <div id="breadcrumb"><p><span style="opacity: 0.4;"><a href="index.html">首頁</a> > <a href="article.html">主題專欄</a> > </span><span style="font-size: 1.25rem; font-weight: var(--semiBold);">文章</span></p></div>
+        <div id="breadcrumb"><p><span style="opacity: 0.4;"><a href="index.html">首頁</a> > <a href="article.html">主題專欄</a> > </span><span style="font-weight: var(--semiBold);">文章</span></p></div>
 
         <div class="content-area">
             <div class="content">
-                <p class="title">新手必讀：飼養長戟大兜蟲的五大重點</p>
-                <p class="date">JUNE 25, 2025</p>
+                <p class="title">馴服雨林巨獸：長戟大兜蟲的家養計劃</p>
+                <p class="date">2025.06.02</p>
                 <img src="./images/article_img.png" alt="">
                 <p>長戟大兜蟲（Dynastes hercules）是甲蟲界的巨人，也是無數蟲迷的夢想品種。如果你正準備踏入飼養世界，以下五大重點，將是你成功與否的關鍵。
                     <br>
@@ -76,7 +89,6 @@
                     定期觀察是否有異常行為（如翻身無法爬起、食慾減退）<br>
                     ✅ 小提醒：
                     成蟲期短，但只要用心照顧，就能留下難忘回憶與成就感。</p>
-                    <br>
                     <br>
                     <img src="./images/article_img2.png" alt="">
                     <p>

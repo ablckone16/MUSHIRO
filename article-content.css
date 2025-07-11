@@ -21,29 +21,27 @@ body{
 }
 
 .content .title{
-    font-size: var(--article-title-40px);
+    font-size: var(--article-title-36);
     font-weight: var(--semiBold);
     color: var(--main-color-nightGreen);
 }
 
 .content .date{
-    font-size: 12px;
+    margin: 4px 0;
+    font-size: var(--date-20);
 }
 
 .content img{
     display: block;
     margin: 64px auto 80px;
-
-    cursor: pointer;
 } 
 
 .content p{
-    line-height: var(--article-p-lineHeight);
+    line-height: var(--p-lineHeight-150);
 }
 
 strong{
-    font-size: var(--h3);
-    line-height: var(--article-p-lineHeight);
+    line-height: var(--p-lineHeight-200);
 }
 
 /* ----- 下方超連結容器 ----- */
@@ -74,7 +72,7 @@ strong{
     right: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--main-color-nightGreen);
     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -109,7 +107,7 @@ strong{
 }
 
 .recent-article h3{
-    font-size: var(--h3);
+    font-size: var(--section-title-20);
     font-weight: var(--semiBold);
     color: var(--main-color-nightGreen);
 }
@@ -121,7 +119,8 @@ strong{
 }
 
 .recent-article .article a{
-    line-height: var(--card-text-p-lineHeight);
+    line-height: var(--p-lineHeight-150);
+    color: var(--main-color-dark);
     text-decoration: underline;
     text-underline-offset: 4px;
 }

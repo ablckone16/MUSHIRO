@@ -26,8 +26,8 @@
     margin-left: 80px;
 
     font-family: 'Unbounded', sans-serif;
-    font-size: var(--animation-title);
-    font-weight: 600;
+    font-size: var(--animation-title-64);
+    font-weight: 500;
     color: var(--main-color-nightGreen);
 }
 
@@ -42,93 +42,155 @@
 /* ul */
 .shop-list{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px 28px;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
 
-    width: 100%;
-    max-width: 880px;
+    width: fit-content;
+    margin: 120px auto;
 
-    margin: 64px auto 160px;
-}
-
-.g-map{
-    display: flex;
-    align-items: stretch;
-
-    width: 50%;
-    max-width: 400px;
+    /* border: 1px solid blue; */
 }
 
 /* --------------- 卡片內容 --------------- */
 .shop-card{
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    gap: 40px;
 
-    /* width: 50%;
-    max-width: 400px; */
+    width: 100%;
 
-    background-color: #fff;
-    border-radius: var(--border-radius-card);
+    background-color: var(--main-color-bg);
     overflow: hidden;
     box-sizing: border-box;
 
-    cursor: pointer;
+    /* border: 1px solid brown; */
+}
+
+.shop-card .img-box{
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
 }
 
 .shop-card img{
     display: block;
-    width: 100%;
-    height: auto;
+
+    transition: transform 0.3s ease;
 }
 
-.shop-card h3{
-    margin-top: 24px;
+.shop-card:hover img{
+    transform: scale(1.1);
+}
+
+/* 右側蟲店資訊區塊 */
+.right-content{
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 0;
+    /* border: 1px solid brown; */
+}
+
+.right-content .g-map-box{
+    width: 64px;
+    height: 64px;
+
+    background-color: var(--main-color-bg);
+    border: 2px solid var(--main-color-dark);
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease;
+}
+
+.right-content .g-map-box a{
+    display: inline-block;
+    width: 64px;
+    line-height: 64px;
+
     text-align: center;
+
+    transition: color 0.3s ease;
+    /* border: 1px solid brown; */
+}
+
+.right-content .g-map-box:hover{
+    background-color: var(--main-color-dark);
+}
+
+.right-content .g-map-box:hover a{
+    color: #fff;
+}
+
+.right-content .shop-info{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin-top: auto;
+
+    /* padding: 0 32px; */
+}
+
+.shop-info .title-map{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* padding-top: 24px; */
+}
+
+.title-map .map-icon-box{
+    display: none;
+    align-items: center;
+    /* justify-content: center; */
+
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+
+    /* border: 1px solid blue; */
+}
+
+.title-map .map-icon-box a{
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+
+    /* border: 1px solid brown; */
+}
+
+.title-map .map-icon-box svg{
+    display: block;
+    width: 40px;
+}
+
+.shop-info h3{
 
     font-size: 1.5rem;
     font-weight: var(--semiBold);
     color: var(--main-color-nightGreen);
 }
 
-/* 內層ul */
-.shop-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 16px;
-
-    padding: 0 32px;
-    margin: 16px 0 40px;
+.divider-line-h{
+    min-height: 1px;
+    background-color: var(--main-color-dark);
 }
 
-.shop-info li{
+.outer-text-box{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.inner-text-box{
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
 
 .shop-info p{
-    line-height: var(--card-text-p-lineHeight);
-}
-
-.shop-info li svg{
-    display: block;
-    width: 24px;
-    height: 24px;
-}
-
-.shop-card:hover{
-    animation: bounceTwice 0.6s ease;
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes bounceTwice {
-    0%   { transform: translateY(0); }
-    20%  { transform: translateY(-6%); }
-    40%  { transform: translateY(0); }
-    60%  { transform: translateY(-3%); }
-    80%  { transform: translateY(0); }
-    100% { transform: translateY(0); }
+    font-size: var(--original);
+    font-weight: var(--semiBold);
+    color: var(--main-color-dark);
 }

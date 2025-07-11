@@ -26,8 +26,8 @@
     margin-left: 80px;
 
     font-family: 'Unbounded', sans-serif;
-    font-size: var(--animation-title);
-    font-weight: 600;
+    font-size: var(--animation-title-64);
+    font-weight: 500;
     color: var(--main-color-nightGreen);
 }
 
@@ -56,7 +56,20 @@
     width: 100%;
     box-sizing: border-box;
 
+    overflow: hidden;
+
     /* border: 1px solid blue; */
+}
+
+.book-main-row-1200-820{
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 .child-5{
@@ -76,9 +89,15 @@
 
 .beetle-card img{
     display: block;
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0));
+
+    transition: filter 0.6s ease;
 }
 
 .beetle-card:hover img {
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+
     animation: beetle-wiggle 0.6s ease-in-out;
   }
 
@@ -98,37 +117,35 @@
 
     max-width: 0;
     max-height: 300px; /* 限制高度防爆版 */
-    overflow: hidden;
     opacity: 0;
 
     transition: max-width 0.4s ease, opacity 0.4s ease;
 }
 
+.beetle-card:hover .beetle-info {
+    max-width: 260px;
+    max-height: 300px; /* 限制高度防爆版 */
+    opacity: 1;
+  }
+
   .beetle-info h3{
-    font-size: var(--card-title);
+    font-size: var(--beetle-info-title-24);
     font-weight: var(--semiBold);
     color: var(--main-color-nightGreen);
   }
   
   .beetle-info p{
-    line-height: var(--card-text-p-lineHeight);
-  }
-
-  .beetle-card:hover .beetle-info {
-    max-width: 260px;
-    max-height: 300px; /* 限制高度防爆版 */
-    opacity: 1;
+    line-height: var(--p-lineHeight-200);
   }
 
 /* --------------- CTA文字區塊 --------------- */
 .cta{
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 64px;
 
     width: 100%;
-    max-width: 600px;
+    max-width: 520px;
     margin: 120px auto;
 
     /* border: 1px solid brown; */
@@ -136,32 +153,56 @@
 
 .cta .text-block{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* align-items: center; */
     gap: 24px;
+
+    width: 100%;
 }
 
 .text-block h3{
-    text-align: center;
+    writing-mode: vertical-lr;
+    letter-spacing: 6px;
 
-    font-size: var(--article-title);
+    font-size: var(--subtitle-32);
     font-weight: var(--semiBold);
-    color: var(--main-color-dark)
+    color: var(--subtitle-b14)
+}
+
+.text-block .divider-line-v{
+    min-width: 1px;
+    background-color: var(--main-color-dark);
+}
+
+.text-block .text-inner-box{
+    display: flex;
+    align-items: center;
 }
 
 .text-block p{
-    font-size: var(--card-text);
-    line-height: var(--card-text-p-lineHeight);
+    font-size: var(--original);
+    font-weight: var(--semiBold);
+    line-height: var(--p-lineHeight-200);
+}
+
+.text-block strong{
+    font-weight: var(--Bold);
+    /* font-size: var(--link-text); */
+    color: var(--main-color-nightGreen);
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
 
 /* ---------- 下方超連結容器 ---------- */
 .view-link{
     display: flex;
     align-items: center;
+    gap: 4px;
 
     width: max-content;
     height: 40px;
-    gap: 4px;
+    margin: 0 auto;
 
     position: relative;
 
@@ -180,7 +221,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--main-color-nightGreen);
     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }

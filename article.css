@@ -6,8 +6,8 @@
 
 .big-title{
     font-family: 'Unbounded', sans-serif;
-    font-size: var(--section-title);
-    font-weight: 600;
+    font-size: var(--big-title-96);
+    font-weight: 500;
     color: var(--main-color-nightGreen);
 }
 
@@ -45,75 +45,82 @@
 /* 標題 */
 .title-container p{
     margin-bottom: 16px;
-    font-size: var(--article-title);
+    font-size: var(--section-title-32);
     font-weight: var(--semiBold);
 }
 
 /* ---------- 卡片容器 ---------- */
 .card-container{
     display: flex;
-    gap: 40px;
+    gap: 32px;
     width: max-content;
-    margin: 80px 0 40px;
+    margin: 40px 0;
 
-    align-items: stretch;
+    /* align-items: stretch; */
 }
 
 .card{
     display: flex;
     flex-direction: column;
-    flex: 1 0 400px;
-    max-width: 400px;
-    max-height: 500px;
+    gap: 16px;
+    max-width: 320px;
 
-    border-radius: var(--border-radius-card);
-    overflow: hidden;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--main-color-bg);
 
     cursor: pointer;
-}
 
-.card:hover{
-    animation: bounceTwice 0.6s ease;
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.1);
-}
-
-@keyframes bounceTwice {
-    0%   { transform: translateY(0); }
-    20%  { transform: translateY(-6%); }
-    40%  { transform: translateY(0); }
-    60%  { transform: translateY(-3%); }
-    80%  { transform: translateY(0); }
-    100% { transform: translateY(0); }
 }
 
 /* ----- 卡片文字 ----- */
-.card .text-container{
-    margin: 24px 32px 32px;
+.card .img-container{
+    width: 320px;
+    height: 370px;
+
     overflow: hidden;
+}
+
+.card img{
+    transition: transform 0.3s ease;
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card .label-date{
+    display: flex;
+    align-items: center;
+
+    padding-top: 8px;
 
     /* border: 1px solid brown; */
 }
 
-.card .text-container h3{
+.card .label-date .label{
+    margin-left: 0;
+}
+
+.card .label-date .date{
+    font-size: var(--date-20);
+    font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
+}
+
+.card h3{
     margin-bottom: 16px;
 
-    font-size: var(--card-title);
+    font-size: var(--card-title-20);
     font-weight: var(--semiBold);
-    line-height: var(--card-text-title-lineHeight);
+    line-height: var(--title-lineHeight-150);
+    color: var(--main-color-dark);
 }
 
-.card .text-container p{
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    font-size: var(--card-p);
-    font-weight: var(--meidum);
-    line-height: var(--card-text-p-lineHeight);
+.card:hover h3{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
 }
+
 /* ---------- 文章控制按鈕容器 ---------- */
 .control-btn-block{
     display: flex;
@@ -128,13 +135,21 @@
 }
 
 .btn-container .btn{
-    padding: 12px 40px;
+    padding: 12px 16px;
 
     background-color: transparent;
-    border: 1px solid var(--main-color-dark);
+    border: 0;
     border-radius: var(--border-radius-s);
 
     cursor: pointer;
+}
+
+.btn svg path{
+    transition: stroke 0.3s ease;
+}
+
+.btn:hover svg path {
+    stroke: var(--label-yellow);
 }
 
 #btn-prev{
@@ -156,14 +171,6 @@
     transform: translateX(20%);
 }
 
-/* 線 */
-.line{
-    width: 30%;
-    height: 1px;
-
-    background-color: var(--main-color-dark);
-}
-
 /* 文字容器 */
 .article-count{
     display: flex;
@@ -173,13 +180,8 @@
     /* border: 1px solid brown; */
 }
 
-.article-count > p:first-of-type{
-    font-size: var(--animation-title);
-    line-height: 0.9;
-}
-
 .article-count p{
-    font-size: var(--article-title);
+    font-size: var(--article-count-24);
     font-weight: var(--semiBold);
 
     color: var(--main-color-nightGreen);
@@ -188,19 +190,19 @@
 /* --------------- 更多文章 --------------- */
 .more_article{
     width: 100%;
+    max-width: 760px;
 
     margin: 160px auto 120px;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     /* border: 1px solid brown; */
 }
 
 .subtitle{
     text-align: center;
-    font-size: var(--subtitle-40px);
+    font-size: var(--section-title-36);
     font-weight: var(--semiBold);
 }
 
@@ -208,11 +210,17 @@
 .article-list{
     display: flex;
     flex-direction: column;
-    gap: 8px;
     margin: 40px auto 64px;
 
     width: 100%;
-    max-width: 760px;
+
+    /* border: 1px solid brown; */
+}
+
+/* ------ 表單外觀 ------ */
+.item-content{
+    display: flex;
+    width: 100%;
 
     /* border: 1px solid brown; */
 }
@@ -220,84 +228,66 @@
 /* li */
 .list-item{
     display: flex;
-    flex-direction: column;
+    align-items: center;
 
     width: 100%;
+    height: 80px;
     padding: 8px;
 
-    background-color: #fff;
-    border-radius: var(--border-radius-s);
+    background-color: var(--main-color-bg);
+    border-bottom: 1px solid var(--main-color-dark);
     box-sizing: border-box;
 
-    transition: transform 0.3s ease, padding 0.3s ease;
+    transition: height 0.3s ease;
 }
 
 .list-item:hover{
-    transform: scale(1.05);
-    padding: 16px 8px 16px 16px;
+    height: 96px;
 }
 
-.list-item:hover .drop-text p{
-    height: auto;
-    margin-top: 8px;
-
-    opacity: 1;
-    transform: scaleY(1);
-}
-
-/* ------ 表單外觀 ------ */
-.item-content{
+.list-item .date-title{
     display: flex;
     align-items: center;
-    width: 100%;
-
-    /* border: 1px solid brown; */
+    gap: 24px;
 }
 
-.item-content img{
-    width: 64px;
-    aspect-ratio: 1/1;
-    margin-right: 24px;
+.date-title .date{
+    width: 120px;
 
-    border-radius: var(--border-radius-s);
-}
-
-.drop-text{
-    display: flex;
-    flex-direction: column;
-    margin-right: 40px;
-
-    /* border: 1px solid brown; */
-}
-
-.drop-text h3{
-    font-size: var(--list-title);
+    font-size: var(--date-20);
     font-weight: var(--semiBold);
+    color: var(--main-color-nightGreen);
 }
 
-.drop-text p{
-    line-height: var(--card-text-p-lineHeight);
+.date-title h3{
+    font-size: var(--list-title-20);
+    font-weight: var(--semiBold);
+    color: var(--main-color-dark);
+}
 
-    height: 0;
-    margin-top: 0;
-
+.list-item svg{
     opacity: 0;
-    transform: scaleY(0);
-    transform-origin: top;
+    margin-left: 8px;
 
-    transition: transform 0.3s ease, height 0.3s ease, margin 0.3s ease;
+    transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+
+.list-item:hover svg{
+    opacity: 1;
+    margin-left: 20px;
 }
 
 .label{
     display: inline-block;
     white-space: nowrap;/* 不換行 */
     width: fit-content;
+    height: fit-content;
 
     padding: 8px;
     margin-left: auto;
     margin-right: 16px;
 
-    font-size: var(--label-text);
+    font-size: var(--label-text-14);
     font-weight: var(--semiBold);
     color: #fff;
 
@@ -317,6 +307,11 @@
 }
 
 /* ----- 下方超連結容器 ----- */
+.view-link-box{
+    display: flex;
+    justify-content: center;
+}
+
 .view-link{
     display: flex;
     align-items: center;
@@ -342,7 +337,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--main-color-nightGreen);
     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }

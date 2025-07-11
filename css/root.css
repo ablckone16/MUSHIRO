@@ -1,5 +1,6 @@
 @import url('reset.css');
 @import url('container-style.css');
+@import url('../rwd/root_rwd.css');
 @import url('text-style.css');
 
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
@@ -13,26 +14,37 @@
     --label-yellow: #ba9132;
     --label-green: #516e41;
     --label-blue: #255359;
+    /* --- 文字 --- */
+    --subtitle-b14: #141414;
 
     /* ---------- 文字 ---------- */
 
     /* --- 字級 --- */
-    --section-title: 6rem;
-    --animation-title: 4rem;
-    --article-title: 2rem;
-    --article-title-40px: 2.5rem;
+    --big-title-96: 6rem;
+    --footer-logo-96: 6rem;
+    --animation-title-64: 4rem;
+    --article-title-40: 2.5rem;
+    --article-title-36: 2.25rem;
+    --section-title-36: 2.25rem;
+    --section-title-32: 2rem;
+    --section-title-20: 1.25rem;
 
-    --subtitle-40px: 2.5rem;
+    --subtitle-40: 2.5rem;
+    --subtitle-32: 2rem;
+    --beetle-info-title-24: 1.5rem;
+    --card-title-20: 1.25rem;
+    --list-title-20: 1.25rem;
 
-    --card-title: 1.25rem;
-    --list-title: 1.25rem;
-    --card-text: 1.25rem;
-    --section-text: 1.25rem;
-    --card-p: 1rem;
-    --nav-text: 1rem;
-    --lable-text: 1rem;
+    --article-count-32: 2rem;
+    --article-count-24: 1.5rem;
+    --footer-text-20: 1.25rem;
+    --button-text-20: 1.25rem;
+    --link-text-20: 1.25rem;
+    --date-20: 1.25rem;
+    --original: 1rem;
+    --label-text-14: 14px;
 
-    --h3: 1.5rem;
+    --h3-24: 1.5rem;
 
     /* --- 字重 --- */
     --regular: 400;
@@ -41,9 +53,10 @@
     --bold: 700;
 
     /* --- 行距 --- */
-    --card-text-title-lineHeight:120%;
-    --card-text-p-lineHeight: 150%;
-    --article-p-lineHeight: 200%;
+    --title-lineHeight-150: 150%;
+    --title-lineHeight-120: 120%;
+    --p-lineHeight-150: 150%;
+    --p-lineHeight-200: 200%;
 
     /* ---------- 間距 ---------- */
     --section-margin-l: 160px;

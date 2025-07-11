@@ -1,5 +1,6 @@
 @import url('./css/root.css');
 
+
 /* --------------- 上方輪播圖 --------------- */
 .carousel-container{
     display: flex;
@@ -22,6 +23,14 @@
 .carousel img{
     display: block;
     margin-left: 80px;
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0));
+
+    transition: filter 0.6s ease;
+}
+
+.carousel img:hover{
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
 }
 
 @keyframes slideLeft {
@@ -59,8 +68,8 @@
     margin-left: 80px;
 
     font-family: 'Unbounded', sans-serif;
-    font-size: var(--animation-title);
-    font-weight: 600;
+    font-size: var(--animation-title-64);
+    font-weight: 500;
     color: var(--main-color-nightGreen);
 }
 
@@ -76,31 +85,67 @@
 .welcome-section{
     display: flex;
     align-items: center;
-    width: max-content;
-    gap: 80px;
+    justify-content: space-between;
+    
+    width: 90vw;
+    min-height: 500px;
+    margin-top: 48px;
+
+    position: relative;
 
     /* border: 1px solid blue; */
 }
 
-.welcome-section img{
+.left-content-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+
+    width: 85%;
+
+    /* border: 1px solid brown; */
+}
+
+.welcome-section .left-content-box img{
     display: block;
+    
+    width: 50vw;
+    /* min-width: 500px; */
 
     /* border: 1px solid brown; */
 }
 
 /* ---------- 右側容器 文字與超連結 ---------- */
-.text-block{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
-.text-block p{
+.left-content-box .welcome-subtitle{ /* 字樣：一同探索甲蟲之美 */
     writing-mode: vertical-rl;
 
-    font-size: var(--animation-title);
+    font-size: var(--section-title-36);
     font-weight: var(--semiBold);
+    line-height: var(--p-lineHeight-200);
     letter-spacing: 8px;
+    color: var(--subtitle-b14);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.left-content-box .welcome-text{
+    width: 320px;
+
+    font-weight: var(--semiBold);
+    line-height: var(--p-lineHeight-200);
+
+}
+
+.view-link-box{
+    width: 136px;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 /* ----- 下方超連結容器 ----- */
@@ -111,8 +156,6 @@
     width: max-content;
     height: 40px;
     gap: 4px;
-
-    margin-right: 80px;
 
     position: relative;
 
@@ -131,7 +174,7 @@
     left: 0;
     bottom: 0;
     width: 0;
-    height: 2px;
+    height: 1px;
     background: var(--main-color-nightGreen);
     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -147,13 +190,14 @@
     color: var(--main-color-nightGreen);
 }
 
-/* --------------- 蟲簡介內容區塊 --------------- */
+/* --------------- INTRO 內容區塊 --------------- */
 .intro-area{
     display: flex;
     flex-direction: column;
 
-    width: max-content;
-    margin: 160px auto 0;
+    width: 100%;
+    max-width: 820px;
+    margin: 160px auto;
 
     /* border: 1px solid brown; */
 }
@@ -162,21 +206,19 @@
 .intro-area .intro{
     display: inline-block;
 
-    /* margin: 120px 0 80px 0px; */
-
     font-family: 'Unbounded', sans-serif;
-    font-size: var(--section-title);
-    font-weight: 600;
+    font-size: var(--big-title-96);
+    font-weight: 400;
     color: var(--main-color-nightGreen);
 }
 
-/* ---------- 卡片區 ---------- */
+/* ---------- intro卡片區 ---------- */
 .card-container{
     display: flex;
     flex-direction: column;
     gap: 160px;
 
-    margin-top: 64px;
+    margin-top: 56px;
 }
 
 .card{
@@ -185,25 +227,77 @@
 }
 
 .card img{
-    display: inline-block;
-    border-radius: var(--border-radius-card);
+    display: block;
 }
 
-.card .card-text{
+.card .card-text-box{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
     width: 400px;
     margin-left: 40px;
 }
 
-.card .card-text h3{
-    margin-bottom: 16px;
-
-    font-size: 2rem;
-    font-weight: var(--semiBold);
+.card-text-box .title-button{
+    display: flex;
+    align-items: center;
 }
 
-.card .card-text p{
-    font-size: var(--card-text);
-    line-height: var(--card-text-p-lineHeight);
+.title-button h3{
+    font-size: 1.5rem;
+    font-weight: var(--semiBold);
+    color: var(--subtitle-b14);
+}
+
+.title-button .drop-toggle-btn{
+    all: unset; /* 清除預設樣式 */
+    cursor: pointer;
+
+    width: 40px;
+    aspect-ratio: 1/1;
+    margin-left: auto;
+    position: relative;
+
+    transition: transform 0.4s ease;
+}
+
+.card-text-box:hover .drop-toggle-btn{
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+}
+
+.drop-toggle-btn svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* border: 1px solid blue; */
+}
+
+.divider {
+    min-height: 1px;
+    background-color: var(--main-color-dark);
+    width: 100%;
+}
+
+.card-text-box .drop-text-box{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.card-text-box:hover .drop-text-box{
+    max-height: 400px;
+    opacity: 1;
+}
+
+.card-text-box .drop-text-box p{
+    line-height: var(--p-lineHeight-200);
+    font-weight: var(--semiBold);
 }
 
 /* --------------- 文章區塊 --------------- */
@@ -212,79 +306,79 @@
     flex-direction: column;
 
     width: 100%;
-    max-width: 800px;
-    aspect-ratio: 1/1;
-    margin: 0 auto 120px;
-    margin-top: var(--section-margin-l);
+    max-width: 820px;
+    margin: 160px auto;
 
-    background-image: url("./images/article_bgi.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative;
+}
 
+.article-area .title{
+    font-family: 'Unbounded', sans-serif;
+    font-size: var(--big-title-96);
+    font-weight: 400;
+    color: var(--main-color-nightGreen);
+}
+
+.article-content-box{
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.article-content-box h3{
+    writing-mode: vertical-lr;
+
+    font-size: var(--section-title-36);
+    font-weight: var(--semiBold);
+    line-height: var(--title-lineHeight-120);
+    letter-spacing: 8px;
+    color: var(--subtitle-b14);
+}
+
+.divider-line-v{
+    min-width: 1px;
+    background-color: var(--main-color-dark);
+}
+
+.img-box{
+    min-width: 360px;
+    overflow: hidden;
+}
+
+.article-area img{
     transition: transform 0.3s ease;
 }
 
-.article-area:hover {
-    transform: scale(1.05);
+.article-area:hover img{
+    transform: scale(1.1);
 }
 
-.article-area p:first-child{
-    font-family: 'Unbounded', sans-serif;
-    transform: translate(5%);
-}
-
-.article-area p{
-    display: block;
-
-    margin: 40px 0 0 auto;
-
-    font-size: var(--section-title);
-    font-weight: var(--semiBold);
-    color: #fff;
-}
-
-.article-text{
+.article-content-box .text-box{
     display: flex;
     flex-direction: column;
-
-    width: 40%;
-    padding: 20px;
-    margin: auto 20px 0 auto;
-
-    background-color: rgba(0, 0, 0, 0.2);
+    gap: 16px;
 }
 
-.article-text h3{
-    font-size: var(--article-title);
+.article-content-box p:nth-child(1){
+    font-size: var(--date-20);
+    color: var(--main-color-nightGreen);
+}
+
+.article-content-box p{
+    font-size: var(--original);
     font-weight: var(--semiBold);
-    line-height: var(--card-text-title-lineHeight);
-    color: #fff;
+    line-height: var(--p-lineHeight-200);
+    color: var(--main-color-dark);
 }
 
-.article-text p{
-    margin-top: 24px;
+.article-view-link-box{
+    width: 156px;
 
-    font-size: var(--card-text);
-    font-weight: var(--regular);
-    line-height: var(--card-text-p-lineHeight);
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
-.article-area .view-link{
-    margin: 64px auto 80px;
-}
-
-.article-area .view-link a{
-    color: #fff;
-}
-
-.article-area .view-link svg{
-    color: #fff;
-}
-
-.article-area .view-link::after{
-    background: #fff;
-}
 
 /* --------------- Keep & Feed --------------- */
 
@@ -314,8 +408,8 @@
     margin-left: 80px;
 
     font-family: 'Unbounded', sans-serif;
-    font-size: var(--animation-title);
-    font-weight: 600;
+    font-size: var(--animation-title-64);
+    font-weight: 500;
     color: var(--main-color-nightGreen);
 }
 
@@ -331,28 +425,41 @@
     display: flex;
     align-items: center;
 
-    width: 80%;
+    width: 100%;
+    max-width: 820px;
     margin: 40px auto 80px;
+
+    /* border: 1px solid brown; */
 }
 
 .KF-content .text-container{
-    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 80px;
+    margin-left: 64px;
+
+    /* border: 1px solid brown; */
 }
 
-.KF-content .text-container>div{
-    margin-bottom: 80px;
+.KF-content .text-container .KF-text-box{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
 }
 
 .KF-content .text-container h3{
-    margin-bottom: 8px;
-
-    font-size: var(--article-title);
+    font-size: var(--h3-24);
     font-weight: var(--semiBold);
-    line-height: var(--card-text-title-lineHeight);
+    line-height: var(--p-lineHeight-150);
 }
 
 .KF-content .text-container p{
-    font-size: var(--card-text);
-    font-weight: var(--regular);
-    line-height: var(--card-text-p-lineHeight);
+    font-size: var(--original);
+    font-weight: var(--semiBold);
+    line-height: var(--p-lineHeight-200);
+}
+
+.KF-view-link-box{
+    width: 176px;
 }

@@ -1,0 +1,95 @@
+
+@media screen and (max-width: 820px){
+
+}
+
+@media screen and (max-width: 430px){
+    
+    .top-text-block{
+        flex-direction: column;
+        gap: 8px;
+
+        margin: 40px auto;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
+
+    .top-text-block h3{
+        display: none;
+    }
+
+    .top-text-block .rwd430-title{
+        display: inline-block;
+
+        font-size: 32px;
+    }
+    
+    .top-text-block p{
+        font-size: 16px;
+    }
+
+    /* -------------------- ul -------------------- */
+    
+    .faq{ /* 表單容器 */
+        padding: 20px 24px 80px;
+        box-sizing: border-box;
+    }
+
+    /* ---------- li ---------- */
+
+    .faq-item{
+        padding: 20px 8px;
+    }
+
+    .faq-question h3{ /* 標題 */
+        max-width: 300px;
+
+        font-size: 18px;
+        line-height: var(--title-lineHeight-150);
+    }
+
+    .faq-answer p{ /* 內文 */
+        font-size: 16px;
+    }
+
+    /* -------------------- 留言牆 -------------------- */
+
+    .wall-outer-box{
+        flex-direction: column;
+        gap: 40px;
+
+        padding: 64px 24px;
+    }
+
+    .wall-outer-box .left-content-box{
+        width: 100%;
+    }
+
+    .left-content-box h3{
+        display: none;
+    }
+
+    .left-content-box .rwd430-title{
+        display: inline-block;
+        margin: 0 auto;
+
+        font-size: 24px;
+    }
+
+    .left-content-box p{ /* 左側文字內容 */
+        display: none;
+    }
+
+    .wall-outer-box .contact-form{ /* 右側表單內容 */
+        width: 100%;
+        gap: 32px;
+    }
+
+    .contact-form .form-group{ /* 標題與文字框距離 */
+        gap: 8px;
+    }
+
+    footer{
+        display: none;
+    }
+}

@@ -6,20 +6,33 @@
     <title>MUSHIRO</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./rwd/container_style_rwd.css">
+    <link rel="stylesheet" href="./rwd/home_rwd.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <!-- --------------- 導覽列 --------------- -->
         <header>
             <div class="logo"><a href="index.html">MUSHIRO</a></div>
-            <ul>
-                <li><a href="./book.html">蟲圖鑑</a></li>
-                <li><a href="./article.html">主題專欄</a></li>
-                <li><a href="./keep&feed.html">飼養Q&A</a></li>
-                <li><a href="./shop.html">購買資訊</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="./book.html">蟲圖鑑</a></li>
+                    <li><a href="./article.html">主題專欄</a></li>
+                    <li><a href="./keep&feed.html">飼養Q&A</a></li>
+                    <li><a href="./shop.html">購買資訊</a></li>
+                </ul>
+            </nav>
+            <div class="header_toggleMenu">
+                <button type="button" class="burger" id="burger" aria-label="開啟導覽選單">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </header>
     </div>
     <div class="wrapper-fullscreen">
@@ -63,18 +76,21 @@
             </div>
         </div>
         <!-- ---------- 歡迎 圖文區塊 ---------- -->
-        <div class="welcome-section">
-            <img src="./images/welcome_img.png" alt="">
-            <div class="text-block">
+        <div class="welcome-section"><!--  position: relative; 在這邊 -->
+            <div class="left-content-box">
+                <img src="./images/welcome_img.png" alt="">
+                <p class="welcome-subtitle">一同探索甲蟲之美</p>
+                <p class="welcome-text">葉山の生活では如何に自然が私たちに活力を与えてくれているかを感じられる。自分の大事にしていた優先順位も少しずつ変わっていく。</p>
+            </div>
+            <div class="view-link-box">
                 <div class="view-link">
                     <a href="./book.html">觀賞蟲圖鑑</a>
-                        <!-- 向量箭頭 -->
+                                <!-- 向量箭頭 -->
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#253237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="2" y1="12" x2="22" y2="12" />
-                            <polyline points="16 6 22 12 16 18" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <polyline points="16 6 22 12 16 18" />
                     </svg>
                 </div>
-                <p>一同探索甲蟲之美</p>
             </div>
         </div>
     </div>
@@ -85,41 +101,80 @@
             <div class="card-container">
                 <div class="card">
                     <img src="./images/card_img1.png" alt="">
-                    <div class="card-text">
-                        <h3>什麼是甲蟲？</h3>
-                        <p>甲蟲，是昆蟲世界中最龐大的一個群體。牠們屬於「鞘翅目」（Coleoptera），全世界已知種類超過 40 萬種，佔了所有昆蟲物種的三分之一以上。光是台灣，就記錄了超過 7500 種甲蟲！無論是大家熟悉的獨角仙、鍬形蟲，還是瓢蟲、金花蟲、象鼻蟲，牠們其實都是甲蟲家族的一員喔。</p>
+                    <div class="card-text-box">
+                        <div class="title-button">
+                            <h3>什麼是甲蟲？</h3>
+                            <button class="drop-toggle-btn" aria-label="展開或收合回答">
+                                <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 1L9 9L1 0.999999" stroke="#222222" stroke-width="2"/>
+                                </svg>                             
+                            </button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="drop-text-box">
+                            <p>甲蟲，是昆蟲世界中最龐大的一個群體。牠們屬於「鞘翅目」（Coleoptera），全世界已知種類超過 40 萬種，佔了所有昆蟲物種的三分之一以上。光是台灣，就記錄了超過 7500 種甲蟲！無論是大家熟悉的獨角仙、鍬形蟲，還是瓢蟲、金花蟲、象鼻蟲，牠們其實都是甲蟲家族的一員喔！</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/card_img2.png" alt="">
-                    <div class="card-text">
-                        <h3>如何分辨一隻甲蟲？</h3>
-                        <p>雖然甲蟲的外型千變萬化，但牠們有幾個共同特徵，只要記住，觀察起來就不會錯喔！</br></br><strong> - 鞘翅：</strong>甲蟲的前翅變得堅硬，像盔甲一樣蓋在背上，用來保護腹部與飛行用的後翅</br><strong> - 咀嚼式口器：</strong>不像蚊子、蝴蝶用吸的，甲蟲靠「咬」來進食</br><strong> - 頭胸腹 + 六隻腳：</strong>是昆蟲的標準配備，甲蟲當然也有</br></br>只要在野外看到一隻有鞘翅、會咬、腳又是六隻的昆蟲，很有可能牠就是一隻甲蟲喔！</p>
+                    <div class="card-text-box">
+                        <div class="title-button">
+                            <h3>如何分辨一隻甲蟲？</h3>
+                            <button class="drop-toggle-btn" aria-label="展開或收合回答">
+                                <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 1L9 9L1 0.999999" stroke="#222222" stroke-width="2"/>
+                                </svg>                             
+                            </button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="drop-text-box">
+                            <p>雖然甲蟲的外型千變萬化，但牠們有幾個共同特徵，只要記住，觀察起來就不會錯！</br><strong> - 鞘翅：</strong>甲蟲的前翅變得堅硬，像盔甲一樣蓋在背上，用來保護腹部與飛行用的後翅</br><strong> - 咀嚼式口器：</strong>不像蚊子、蝴蝶用吸的，甲蟲靠「咬」來進食</br><strong> - 頭胸腹 + 六隻腳：</strong>是昆蟲的標準配備，甲蟲當然也有</br>只要在野外看到一隻有鞘翅、會咬、腳又是六隻的昆蟲，很有可能牠就是一隻甲蟲喔！</p>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./images/card_img3.png" alt="">
-                    <div class="card-text">
-                        <h3>每隻甲蟲都是打架高手！</h3>
-                        <p>別看牠們平常慢吞吞的，其實每一隻甲蟲，都是與生俱來的戰士。從獨角仙的頭角衝鋒，到鍬形蟲的巨鉗纏鬥，牠們的身體就是最好的武器。甲蟲之所以能在自然界生存下來，靠的不是速度，而是裝甲、力量與策略。就連可愛的瓢蟲，也有牠保護自己的方式。所以打架對牠們來說，不是暴力，而是生存之道喔。</p>
+                    <div class="card-text-box">
+                        <div class="title-button">
+                            <h3>每隻甲蟲都是打架高手！</h3>
+                            <button class="drop-toggle-btn" aria-label="展開或收合回答">
+                                <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17 1L9 9L1 0.999999" stroke="#222222" stroke-width="2"/>
+                                </svg>                             
+                            </button>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="drop-text-box">
+                            <p>別看牠們平常慢吞吞的，其實每一隻甲蟲，都是與生俱來的戰士。從獨角仙的頭角衝鋒，到鍬形蟲的巨鉗纏鬥，牠們的身體就是最好的武器。甲蟲之所以能在自然界生存下來，靠的不是速度，而是裝甲、力量與策略。就連可愛的瓢蟲，也有牠保護自己的方式。所以打架對牠們來說，不是暴力，而是生存之道喔。</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- --------------- 文章區塊 --------------- -->
         <div class="article-area">
-            <p>ARTICLE</p>
-            <div class="article-text">
-                <h3>馴服雨林巨獸：長戟大兜蟲的家養計畫</h3>
-                <p>長戟大兜蟲是世界上體型最大的甲蟲之一，雄蟲最具代表性的特徵就是頭部與胸部延伸出的巨大角狀結構，看起來威風凜凜、氣勢十足！但別被牠的外表嚇到，其實長戟大兜蟲性情溫和，是許多甲蟲飼養愛好者夢寐以求的品種之一喔！</p>
+            <p class="title">Article</p>
+            <div class="article-content-box">
+                <h3>長戟大兜家養計劃</h3>
+                <div class="divider-line-v"></div>
+                <div class="img-box">
+                    <img src="./images/article_bgi.png" alt="">
+                </div>
+                <div class="text-box">
+                    <p>2025.06.02</p>
+                    <p>長戟大兜蟲是世界上體型最大的甲蟲之一，雄蟲最具代表性的特徵就是頭部與胸部延伸出的巨大角狀結構，看起來威風凜凜、氣勢十足！但別被牠的外表嚇到，其實長戟大兜蟲性情溫和，是許多甲蟲飼養愛好者夢寐以求的品種之一喔！</p>
+                </div>
             </div>
-            <div class="view-link">
-                <a href="./article.html">閱讀主題文章</a>
-                <!-- 向量箭頭 -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <polyline points="16 6 22 12 16 18" />
-                </svg>
+            <div class="article-view-link-box">
+                <div class="view-link">
+                    <a href="./article.html">閱讀主題文章</a>
+                    <!-- 向量箭頭 -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <polyline points="16 6 22 12 16 18" />
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -144,17 +199,19 @@
         <div class="KF-content">
             <img src="./images/KF_img.png" alt="">
             <div class="text-container">
-                <div>
+                <div class="KF-text-box">
                     <h3>想飼養自己的第一隻甲蟲卻猶豫不決嗎？</h3>
                     <p>別擔心，我們幫你整理了新手最常見的飼養問題與簡單解答，從環境、飲食到日常照護，讓你在開始前就能安心上路。如果你正卡在「不知道會不會照顧不好」，那這區就是為你準備的🐞</p>
                 </div>
-                <div class="view-link">
-                    <a href="./keep&feed.html">觀看飼養問答集</a>
-                    <!-- 向量箭頭 -->
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#253237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <polyline points="16 6 22 12 16 18" />
-                    </svg>
+                <div class="KF-view-link-box">
+                    <div class="view-link">
+                        <a href="./keep&feed.html">觀看飼養問答集</a>
+                        <!-- 向量箭頭 -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#253237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <polyline points="16 6 22 12 16 18" />
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>

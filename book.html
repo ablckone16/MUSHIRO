@@ -6,22 +6,35 @@
     <title>MUSHIRO - 蟲圖鑑</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./book.css">
+    <link rel="stylesheet" href="./rwd/container_style_rwd.css">
+    <link rel="stylesheet" href="./rwd/book_rwd.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+    <script src="./js/main.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <!-- --------------- 導覽列 --------------- -->
         <header>
             <div class="logo"><a href="index.html">MUSHIRO</a></div>
-            <ul>
-                <li><a href="./book.html">蟲圖鑑</a></li>
-                <li><a href="./article.html">主題專欄</a></li>
-                <li><a href="./keep&feed.html">飼養Q&A</a></li>
-                <li><a href="./shop.html">購買資訊</a></li>
-            </ul>
+            <nav>
+                <ul>
+                    <li><a href="./book.html">蟲圖鑑</a></li>
+                    <li><a href="./article.html">主題專欄</a></li>
+                    <li><a href="./keep&feed.html">飼養Q&A</a></li>
+                    <li><a href="./shop.html">購買資訊</a></li>
+                </ul>
+            </nav>
+            <div class="header_toggleMenu">
+                <button type="button" class="burger" id="burger" aria-label="開啟導覽選單">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </header>
-        <div id="breadcrumb"><p><span style="opacity: 0.4;"><a href="index.html">首頁</a> > </span><span style="font-size: 1.25rem; font-weight: var(--semiBold);">蟲圖鑑</span></p></div>
+        <div id="breadcrumb"><p><span style="opacity: 0.4;"><a href="index.html">首頁</a> > </span><span style="font-weight: var(--semiBold);">蟲圖鑑</span></p></div>
     </div>
     <div class="wrapper-fullscreen">
         <div class="title-container-leftslide">
@@ -176,6 +189,15 @@
                     </div>
                 </div>
                 <div class="beetle-card">
+                    <img src="./images/Dorcus_titanus_palawanicus.png" alt="巴拉望巨扁鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>巴拉望巨扁鍬形蟲</h3>
+                        <p><strong>學名：</strong>Dorcus titanus palawanicus</p>
+                        <p><strong>簡介：</strong>世界上最大型的扁鍬形蟲，產於菲律賓巴拉望島故而得名。戰鬥力極強，有著如巨人般的身軀，加上那對嚇人的大顎，讓牠比其他屬鍬形蟲多了幾分震撼力</p>
+                        <p><strong>產地：</strong>菲律賓 巴拉望島</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
                     <img src="./images/Allotopus_moellenkampi_moseri.png" alt="黃金鬼鍬形蟲" class="beetle-img" />
                     <div class="beetle-info">
                         <h3>黃金鬼鍬形蟲</h3>
@@ -185,20 +207,186 @@
                     </div>
                 </div>
             </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Megasoma_actaeon.png" alt="亞克提恩大兜蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>亞克提恩大兜蟲</h3>
+                        <p><strong>學名：</strong>Megasoma actaeon</p>
+                        <p><strong>簡介：</strong>南美巨人，名字來自希臘神話中的獵人亞克提恩。為地表最重量級的兜蟲，又稱「甲蟲界橫綱」。擁有厚重堅實的身軀，體長可達 13 公分</p>
+                        <p><strong>產地：</strong>南美洲（秘魯、巴西、哥倫比亞等地）</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Dynastes_hercules.png" alt="長戟大兜蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>長戟大兜蟲</h3>
+                        <p><strong>學名：</strong>Dynastes hercules</p>
+                        <p><strong>簡介：</strong>又名赫克力士長戟大兜蟲。為世界上最大型的兜蟲之一，體長可達 18 公分。外型華麗，擁有金黃色翅鞘以及強壯的胸角與身軀</p>
+                        <p><strong>產地：</strong>中南美洲</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Chalcosoma_caucasus.png" alt="高加索南洋大兜蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>高加索南洋大兜蟲</h3>
+                        <p><strong>學名：</strong>Chalcosoma caucasus</p>
+                        <p><strong>簡介：</strong>屬名源自希臘語的"Chalco(銅)"和"Soma(身體)"，意指牠們的鏡銅般的身軀。以「三叉戟」般的犄角聞名，性格兇暴，體長可達 13 公分，是東南亞最具代表性的巨型兜蟲之一</p>
+                        <p><strong>產地：</strong>東南亞（印尼、菲律賓、印度和中南半島等地）</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Eupatorus_gracilicornis.png" alt="黃五角大兜蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>黃五角兜蟲</h3>
+                        <p><strong>學名：</strong>Eupatorus gracilicornis</p>
+                        <p><strong>簡介：</strong>外型特別，擁有胸角與頭角共五根因此而得名。鞘翅呈黃色，在泰國等產地甚至可發現鞘翅為黑色的亞種</p>
+                        <p><strong>產地：</strong>東南亞（泰國、越南、印度、緬甸等地）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Dynastes_granti.png" alt="美西白兜蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>美西白兜蟲</h3>
+                        <p><strong>學名：</strong>Dynastes granti</p>
+                        <p><strong>簡介：</strong>被譽為「最美麗兜蟲」，學名granti來自於一位美國的古代將軍，所以美西白兜亦有"白將軍兜蟲"的美名</p>
+                        <p><strong>產地：</strong>北美洲（美國亞利桑那州、猶他州等地）</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Trypoxylus_dichotomus.png" alt="獨角仙" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>獨角仙</h3>
+                        <p><strong>學名：</strong>Trypoxylus dichotomus</p>
+                        <p><strong>簡介：</strong>亞洲最富盛名與特色的兜蟲之一，雄蟲有 Y 字型頭角，常見於日本與台灣</p>
+                        <p><strong>產地：</strong>東亞（台灣、日本、中國、韓國等地）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Hexarthrius_mandibularis.png" alt="巨顎叉角鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>巨顎叉角鍬形蟲</h3>
+                        <p><strong>學名：</strong>Hexarthrius mandibularis</p>
+                        <p><strong>簡介：</strong>雄蟲擁有巨大叉狀大顎，體長可超過 11 公分，被稱為世界三大超大型锹之一。性格較為神經質，力氣大且攻擊性強</p>
+                        <p><strong>產地：</strong>印尼 蘇門答臘島 婆羅洲島</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Odontolabis_lacordairei.png" alt="拉氏黃翅鬼鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>拉氏黃翅鬼鍬形蟲</h3>
+                        <p><strong>學名：</strong>Odontolabis lacordairei</p>
+                        <p><strong>簡介：</strong>其特色是帶有鵝黃色的三角形頭頓以及佈滿瑪瑙紋路的橘黃鞘翅，為鬼艷鍬屬中極具觀賞性的代表</p>
+                        <p><strong>產地：</strong>印尼 蘇門答臘島</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Prosopocoilus_giraffa.png" alt="長頸鹿鋸齒鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>長頸鹿鋸齒鍬形蟲</h3>
+                        <p><strong>學名：</strong>Prosopocoilus giraffa</p>
+                        <p><strong>世界紀錄：</strong>世界上最長的鍬型蟲，體長可超過 12 公分。擁有細長身軀與鋸齒狀大顎，大顎可佔總體長的一半左右</p>
+                        <p><strong>產地：</strong>東南亞與南亞（印尼、寮國、印度等地）</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Dorcus_curvidens.png" alt="彎角大鍬" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>彎角大鍬</h3>
+                        <p><strong>學名：</strong>Dorcus curvidens</p>
+                        <p><strong>簡介：</strong>公蟲具有向內彎曲新月般的大顎。性格溫和且容易人工飼養。在大型鍬形蟲中，算是容易入門的品種</p>
+                        <p><strong>產地：</strong>中國南部與東南亞、南亞等地區（含越南、泰國、印度與不丹等）</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Cyclommatus_metallifer.png" alt="美他力佛細身赤鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>美他力佛細身赤鍬形蟲</h3>
+                        <p><strong>學名：</strong>Cyclommatus metallifer</p>
+                        <p><strong>簡介：</strong>全身散發金屬色澤的鍬形蟲。特色除了古銅色翅鞘以外，還有那誇張可超過身體長度的大顎。顏色多變，近年來在人工的選育下甚至可產出紫色、深藍色等特殊個體</p>
+                        <p><strong>產地：</strong>印尼 蘇拉威西島 珀倫島 班庫爾島 等地</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Lucanus_cervus_akbesianus.png" alt="阿卡巴深山鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>阿卡巴深山鍬形蟲</h3>
+                        <p><strong>學名：</strong> Lucanus cervus akbesianus</p>
+                        <p><strong>簡介：</strong>擁有誇張的大顎以及帥氣的頭盔，體長可以超過 10 公分，為世上最大的深山鍬形蟲之一</p>
+                        <p><strong>產地：</strong>敘利亞 土耳其</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Rhaetulus_crenatus_speciosus.png" alt="泰國黃金鹿角鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>泰國黃金鹿角鍬形蟲</h3>
+                        <p><strong>學名：</strong>Rhaetulus crenatus speciosus</p>
+                        <p><strong>簡介：</strong>體型雖小，但外觀極具辨識度。鑲上金黃邊的翅鞘看起來貴氣亮眼，是玩家間爭相飼養追逐的物種</p>
+                        <p><strong>產地：</strong>東南亞（泰國、寮國、缅甸、越南等地）</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Mesotopus_tarandus.png" alt="非洲大黑艷鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>非洲大黑艷鍬形蟲</h3>
+                        <p><strong>學名：</strong>Mesotopus tarandus</p>
+                        <p><strong>簡介：</strong>又稱"非洲寶石"。全身烏黑，並散發著如跑車烤漆般的鏡面光澤。成熟個體遇到干擾時身體會震動，是一種既有趣又極具魅力的鍬形蟲</p>
+                        <p><strong>產地：</strong>非洲西部</p>
+                    </div>
+                </div>
+            </div>
+            <div class="book-main-row-1200-820">
+                <div class="beetle-card">
+                    <img src="./images/Dorcus_titanus_palawanicus.png" alt="巴拉望巨扁鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>巴拉望巨扁鍬形蟲</h3>
+                        <p><strong>學名：</strong>Dorcus titanus palawanicus</p>
+                        <p><strong>簡介：</strong>世界上最大型的扁鍬形蟲，產於菲律賓巴拉望島故而得名。戰鬥力極強，有著如巨人般的身軀，加上那對嚇人的大顎，讓牠比其他屬鍬形蟲多了幾分震撼力</p>
+                        <p><strong>產地：</strong>菲律賓 巴拉望島</p>
+                    </div>
+                </div>
+                <div class="beetle-card">
+                    <img src="./images/Allotopus_moellenkampi_moseri.png" alt="黃金鬼鍬形蟲" class="beetle-img" />
+                    <div class="beetle-info">
+                        <h3>黃金鬼鍬形蟲</h3>
+                        <p><strong>學名：</strong>Allotopus moellenkampi moseri</p>
+                        <p><strong>簡介：</strong>世界上最美麗，也最珍貴的鍬形蟲之一。以其獨特的金黃色澤和彎曲大顎而聞名。翅鞘在濕潤時會呈現黑色，但在晾乾後會回復成古銅金色澤</p>
+                        <p><strong>產地：</strong>印尼爪哇 蘇門答臘島 馬來西亞 緬甸 等地</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- --------------- 下方文字區塊 --------------- -->
         <div class="cta">
             <div class="text-block">
-                <h3>看完這些甲蟲，你是不是也開始好奇了？</h3>
-                <p>甲蟲的世界遠比你想像的還要豐富。從閃耀金屬光澤的鍬形蟲，到身披戰角的獨角仙——你在這裡看到的，只是這個龐大家族的一小部分。每一隻甲蟲都有自己的名字、習性、棲地與故事。如果你也想深入了解牠們的生活、生態，甚至養殖方式，歡迎繼續探索我們的 <strong><a href="article.html">主題專欄</a></strong>，讓我們一起打開這扇通往微型宇宙的大門。</p>
+                <h3>開始好奇了嗎？</h3>
+                <div class="divider-line-v"></div>
+                <div class="text-inner-box">
+                    <p>甲蟲的世界遠比你想像的還要豐富。從閃耀金屬光澤的鍬形蟲，到身披戰角的獨角仙——你在這裡看到的，只是這個龐大家族的一小部分。每一隻甲蟲都有自己的名字、習性、棲地與故事。如果你也想深入了解牠們的生活、生態，甚至養殖方式，歡迎繼續探索我們的 <strong><a href="article.html">主題專欄</a></strong>，讓我們一起打開這扇通往微型宇宙的大門。</p>
+                </div>
             </div>
-            <div class="view-link">
-                <a href="./article.html">觀看主題專欄</a>
-                    <!-- 向量箭頭 -->
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#253237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="2" y1="12" x2="22" y2="12" />
-                        <polyline points="16 6 22 12 16 18" />
-                </svg>
+            <div class="view-link-box">
+                <div class="view-link">
+                    <a href="./article.html">觀看主題專欄</a>
+                        <!-- 向量箭頭 -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#253237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <polyline points="16 6 22 12 16 18" />
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
