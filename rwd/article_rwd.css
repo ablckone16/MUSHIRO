@@ -1,3 +1,12 @@
+@media screen and (max-width: 1000px){
+
+    .article-list{ /* ul */
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+}
+
 
 @media screen and (max-width: 820px){
     
@@ -151,8 +160,6 @@
         font-size: 18px;
     }
 
-    footer{
-        display: none;
-    }
+    
     
 }

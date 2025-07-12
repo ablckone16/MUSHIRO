@@ -87,6 +87,10 @@
     /* border: 1px solid brown; */
 }
 
+.beetle-card{
+    cursor: pointer;
+}
+
 .beetle-card img{
     display: block;
 
@@ -122,7 +126,7 @@
     transition: max-width 0.4s ease, opacity 0.4s ease;
 }
 
-.beetle-card:hover .beetle-info {
+.beetle-card.active .beetle-info {
     max-width: 260px;
     max-height: 300px; /* 限制高度防爆版 */
     opacity: 1;

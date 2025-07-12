@@ -21,7 +21,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* height: 80px; */
     padding: 28px 40px;
 
     /* border: 1px solid brown; */
@@ -78,7 +77,92 @@ header nav ul li a:hover::after{
     display: none;    
 }
 
-.burger{
+.rwd-menu {
+    display: flex;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    justify-content: space-between;
+  
+    background-color: white;
+    opacity: 0;
+    padding: 64px 0;
+  
+    z-index: 999;
+    overflow-y: auto;
+
+    transition: width 0.6s ease-in-out,
+                padding 0.6s ease-in-out,
+                opacity 0.6s ease-in-out; 
+}
+
+.rwd-menu.active{
+    width: 50vw; 
+    padding: 64px;
+    opacity: 0.9;
+}
+
+.rwdMenu-left-content{
+    display: flex;
+    flex-direction: column;
+
+    height: fit-content;
+}
+
+.rwdMenu-left-content .logo{
+    font-family: 'Staatliches', sans-serif;
+    font-size: 2rem;
+    padding-left: 20px;
+}
+
+.rwdMenu-left-content ul li a::after{
+    bottom: 10px;
+}
+
+.rwdMenu-right-content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: flex-end;
+    margin-bottom: 20vh;
+    gap: 40px;
+}
+
+.rwdMenu-right-content p{
+    font-weight: var(--semiBold);
+    line-height: var(--p-lineHeight-200);
+}
+
+.rwdMenu-right-content p:nth-of-type(1){
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.rwd-menu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: fit-content;
+    margin-top: 20px;
+}
+
+.rwd-menu li{
+    height: 48px;
+}
+
+.burger-in-box{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.burger-in{
     position: relative;
 
     width: 40px;
@@ -89,19 +173,7 @@ header nav ul li a:hover::after{
     cursor: pointer;
 }
 
-/* .burger::before{
-    content: '';
-    display: block;
-    width: 2px;
-    height: 10px;
-    background-color: maroon;
-
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-} */
-
-.burger span{
+.burger-in span{
     display: block;
     
     position: absolute;
@@ -118,11 +190,52 @@ header nav ul li a:hover::after{
     transition: .25s ease-in-out;
 }
 
+.burger-in span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 30%;
+    left: 29%;
+}
+
+.burger-in span:nth-of-type(2) {
+    transform: rotate(-45deg);
+    top: 30%;
+    left: 29%;
+}
+
+.burger{
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+.burger span{
+    display: block;
+    
+    position: absolute;
+    left: 0;
+
+    width: 60%;
+    height: 1px;
+    border-radius: 1px;
+    
+    background: var(--main-color-dark);
+    opacity: 1;
+
+    transform: rotate(0deg);
+    transition: 0.6s ease-in-out;
+}
+
 .burger span:nth-of-type(1) {
     top: 30%;
     left: 50%;
     transform: translate(-50%,-50%);
-    transform-origin: left center;}
+    transform-origin: left center;
+}
   
 .burger span:nth-of-type(2) {
     top: 50%;
@@ -142,10 +255,14 @@ header nav ul li a:hover::after{
     transform: rotate(45deg);
     top: 30%;
     left: 29%;
+
+    opacity: 0;
   }
   
 .burger.active span:nth-of-type(2) {
     width: 0%;
+    opacity: 0;
+
     opacity: 0;
   }
   
@@ -153,10 +270,13 @@ header nav ul li a:hover::after{
     transform: rotate(-45deg);
     top: 72%;
     left: 29%;
+
+    opacity: 0;
   }
 /* --------------- footer --------------- */
 footer{
-    padding: 40px 0 80px;
+    padding: 40px 40px 80px;
+    box-sizing: border-box;
 
     background-color: #fff;
 }
@@ -164,7 +284,7 @@ footer{
 .content-wrapper{
     display: flex;
     align-items: center;
-    gap: 160px;
+    justify-content: space-between;
 
     width: 100%;
     max-width: 1200px;
@@ -177,6 +297,10 @@ footer{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    
+    max-width: 900px;
+    padding-right: 24px;
+    box-sizing: border-box;
 
     flex-grow: 3;
 
@@ -186,7 +310,10 @@ footer{
 .brand-text{
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
+
+    /* padding-left: 24px; */
+    box-sizing: border-box;
 
     gap: 64px;
 }
@@ -253,6 +380,17 @@ footer{
     line-height: 1.8;
 
     color: var(--main-color-nightGreen);
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+}
+
+.right-container .footer-icons{
+    display: none;
 }
 
 /* 麵包屑 */

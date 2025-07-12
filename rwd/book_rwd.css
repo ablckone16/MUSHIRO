@@ -40,6 +40,9 @@
     .cta{
         padding: 0 24px;
         box-sizing: border-box;
+        gap: 40px;
+
+        margin: 80px auto 120px;
     }
 
     .view-link{
@@ -48,10 +51,6 @@
 
     .view-link::after{
         width: 100%;
-    }
-
-    footer{
-        display: none;
     }
 
 }
@@ -119,7 +118,5 @@
         font-size: 18px;
     }
 
-    footer{
-        display: none;
-    }
+    
 }

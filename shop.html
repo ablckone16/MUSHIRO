@@ -33,6 +33,31 @@
                     <span></span>
                 </button>
             </div>
+            <nav id="rwdMenu" class="rwd-menu" hidden>
+                <div class="rwdMenu-left-content">
+                    <div class="logo">MUSHIRO</div>
+                    <ul>
+                        <li><a href="./book.html">蟲圖鑑</a></li>
+                        <li><a href="./article.html">主題專欄</a></li>
+                        <li><a href="./keep&feed.html">飼養Q&A</a></li>
+                        <li><a href="./shop.html">購買資訊</a></li>
+                    </ul>
+                </div>
+                <div class="rwdMenu-right-content">
+                    <p>
+                        甲蟲との出会いを通して、小さな命の神秘や美しさに心を動かされる。共に観察することで、自然とのつながりがより深まっていく。
+                    </p>
+                    <p>
+                        © 2025 MUSHIRO 虫郎 All rights reserved.
+                    </p>
+                </div>
+                <div class="burger-in-box">
+                    <button type="button" class="burger-in" id="burger-in" aria-label="">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
         </header>
         <div id="breadcrumb"><p><span style="opacity: 0.4;"><a href="index.html">首頁</a> > </span><span style="font-weight: var(--semiBold);">購買資訊</span></p></div>
     </div>
@@ -115,7 +140,7 @@
                         <div class="outer-text-box">
                             <div class="inner-text-box">
                                 <p>地址：</p>
-                                <p>242 新北市新莊區中正路437號</p>
+                                <p class="address">242 新北市新莊區中正路437號</p>
                             </div>
                             <div class="inner-text-box">
                                 <p>電話：</p>                  
@@ -153,7 +178,7 @@
                         <div class="outer-text-box">
                             <div class="inner-text-box">
                                 <p>地址：</p>
-                                <p>116台北市文山區羅斯福路五段170巷39號</p>
+                                <p class="address">116台北市文山區羅斯福路五段170巷39號</p>
                             </div>
                             <div class="inner-text-box">
                                 <p>電話：</p>                  
@@ -191,7 +216,7 @@
                         <div class="outer-text-box">
                             <div class="inner-text-box">
                                 <p>地址：</p>
-                                <p>302 新竹縣竹北市六家五路二段182號</p>
+                                <p class="address">302 新竹縣竹北市六家五路二段182號</p>
                             </div>
                             <div class="inner-text-box">
                                 <p>電話：</p>                  
@@ -229,7 +254,7 @@
                         <div class="outer-text-box">
                             <div class="inner-text-box">
                                 <p>地址：</p>
-                                <p>40866 台中市南屯區向上南路一段341號</p>
+                                <p class="address">40866 台中市南屯區向上南路一段341號</p>
                             </div>
                             <div class="inner-text-box">
                                 <p>電話：</p>                  
@@ -267,7 +292,7 @@
                         <div class="outer-text-box">
                             <div class="inner-text-box">
                                 <p>地址：</p>
-                                <p>404 台中市北區忠明路153號</p>
+                                <p class="address">404 台中市北區忠明路153號</p>
                             </div>
                             <div class="inner-text-box">
                                 <p>電話：</p>                  
@@ -306,11 +331,22 @@
                     </div>
                 </div>
                 <!-- 底部導覽列 -->
-                <div class="bottom-nav">
-                    <a href="./book.html">蟲圖鑑</a>
-                    <a href="./article.html">主題專欄</a>
-                    <a href="./keep&feed.html">飼養Q&A</a>
-                    <a href="./shop.html">購買資訊</a>
+                <div class="right-container">
+                    <div class="bottom-nav">
+                        <a href="./book.html">蟲圖鑑</a>
+                        <a href="./article.html">主題專欄</a>
+                        <a href="./keep&feed.html">飼養Q&A</a>
+                        <a href="./shop.html">購買資訊</a>
+                    </div>
+                    <div class="footer-icons">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.33325 16.0002C3.33325 10.0295 3.33325 7.04283 5.18792 5.18816C7.04259 3.3335 10.0279 3.3335 15.9999 3.3335C21.9706 3.3335 24.9572 3.3335 26.8119 5.18816C28.6666 7.04283 28.6666 10.0282 28.6666 16.0002C28.6666 21.9708 28.6666 24.9575 26.8119 26.8122C24.9572 28.6668 21.9719 28.6668 15.9999 28.6668C10.0293 28.6668 7.04259 28.6668 5.18792 26.8122C3.33325 24.9575 3.33325 21.9722 3.33325 16.0002Z" stroke="#253237" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23.344 8.66699H23.3307M22 16.0003C22 17.5916 21.3679 19.1177 20.2426 20.243C19.1174 21.3682 17.5913 22.0003 16 22.0003C14.4087 22.0003 12.8826 21.3682 11.7574 20.243C10.6321 19.1177 10 17.5916 10 16.0003C10 14.409 10.6321 12.8829 11.7574 11.7577C12.8826 10.6325 14.4087 10.0003 16 10.0003C17.5913 10.0003 19.1174 10.6325 20.2426 11.7577C21.3679 12.8829 22 14.409 22 16.0003Z" stroke="#253237" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30.0533 8.56016C29.8867 7.93654 29.5596 7.36745 29.1046 6.90963C28.6496 6.4518 28.0825 6.12122 27.4599 5.95083C25.1732 5.3335 15.9999 5.3335 15.9999 5.3335C15.9999 5.3335 6.82658 5.3335 4.53992 5.95083C3.91733 6.12122 3.35027 6.4518 2.89525 6.90963C2.44023 7.36745 2.11314 7.93654 1.94659 8.56016C1.33325 10.8642 1.33325 15.6668 1.33325 15.6668C1.33325 15.6668 1.33325 20.4695 1.94659 22.7735C2.11294 23.3974 2.43993 23.9667 2.89497 24.4248C3.35 24.8829 3.91717 25.2137 4.53992 25.3842C6.82792 26.0002 15.9999 26.0002 15.9999 26.0002C15.9999 26.0002 25.1732 26.0002 27.4599 25.3842C28.0827 25.2137 28.6498 24.8829 29.1049 24.4248C29.5599 23.9667 29.8869 23.3974 30.0533 22.7735C30.6666 20.4722 30.6666 15.6668 30.6666 15.6668C30.6666 15.6668 30.6666 10.8642 30.0533 8.56016ZM12.9999 20.0282V11.3068L20.6666 15.6682L12.9999 20.0282Z" stroke="#253237" stroke-width="1.5" stroke-miterlimit="10" stroke-linejoin="round"/>
+                        </svg>                    
+                    </div>
                 </div>
             </div>
         </div>

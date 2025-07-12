@@ -2,6 +2,7 @@
 
 .bigTitle-container{
     margin-top: 80px;
+    margin-left: 40px;
 }
 
 .big-title{
@@ -190,7 +191,7 @@
 /* --------------- 更多文章 --------------- */
 .more_article{
     width: 100%;
-    max-width: 760px;
+    max-width: 800px;
 
     margin: 160px auto 120px;
 
