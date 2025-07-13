@@ -16,9 +16,9 @@ $(function(){
 
     $('.drop-toggle-btn').click(function () {
         const card = $(this).closest('.card');
-        const dropTextBox = card.find('.card-text-box');
+        const cardTextBox = card.find('.card-text-box');
         
-        dropTextBox.toggleClass('active');
+        cardTextBox.toggleClass('active');
     });
 
     /* -------------------- 蟲圖鑑卡片 -------------------- */
